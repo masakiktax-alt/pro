@@ -1273,19 +1273,19 @@
         <form class="form-stack" action="https://formspree.io/f/xrevpozj" method="POST">
           <div>
             <label>お名前<span style="color:var(--brass);"> *</span></label>
-            <input type="text" required>
+            <input type="text" name="お名前" required>
           </div>
           <div>
             <label>会社名・団体名</label>
-            <input type="text">
+            <input type="text" name="会社名・団体名">
           </div>
           <div>
             <label>メールアドレス<span style="color:var(--brass);"> *</span></label>
-            <input type="email" required>
+            <input type="email" name="email" required>
           </div>
           <div>
             <label>ご相談の種類<span style="color:var(--brass);"> *</span></label>
-            <select required>
+            <select name="ご相談の種類" required>
               <option value="">選択してください</option>
               <option>メンタリングのご相談</option>
               <option>経営コンサルティングのご相談</option>
@@ -1298,7 +1298,7 @@
           </div>
           <div>
             <label>ご相談内容<span style="color:var(--brass);"> *</span></label>
-            <textarea required></textarea>
+            <textarea name="ご相談内容" required></textarea>
           </div>
           <button type="submit" class="btn btn-primary" style="justify-content:center;margin-top:8px;">送信する</button>
         </form>
