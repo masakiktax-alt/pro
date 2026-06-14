@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>合同会社ProfeSsions Edge | 教養を、経営の刃に。</title>
+<meta name="description" content="合同会社ProfeSsions Edgeは、教養と科学的経営学を基盤に、経営者の思考そのものを支援するメンタリング・コンサルティング・AI事業を展開しています。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0E1116;
+    --bg-soft:#141822;
+    --surface:#171C26;
+    --surface-2:#1D2330;
+    --line:#2B313F;
+    --line-soft:#232936;
+    --ink:#E9E6DC;
+    --ink-dim:#A7AEBB;
+    --ink-mute:#6E7686;
+    --brass:#C9A24B;
+    --brass-soft:#9B8051;
+    --brass-glow:rgba(201,162,75,0.12);
+    --serif:'Shippori Mincho','EB Garamond',serif;
+    --sans:'Noto Sans JP','Hiragino Kaku Gothic ProN',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-weight:300;
+    line-height:1.9;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+
+  .wrap{max-width:1080px;margin:0 auto;padding:0 32px;}
+
+  /* === Edge motif === */
+  .edge-rule{
+    position:relative;
+    height:1px;
+    background:var(--line);
+    overflow:visible;
+  }
+  .edge-rule::after{
+    content:'';
+    position:absolute;
+    top:-1px;left:0;
+    width:64px;height:3px;
+    background:var(--brass);
+    clip-path:polygon(0 0,100% 50%,0 100%);
+  }
+  .edge-tick{
+    display:inline-block;
+    width:10px;height:10px;
+    background:var(--brass);
+    clip-path:polygon(0 0,100% 50%,0 100%);
+    margin-right:14px;
+    flex-shrink:0;
+  }
+
+  /* === Header === */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    z-index:100;
+    background:rgba(14,17,22,0.82);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .nav{
+    max-width:1080px;margin:0 auto;padding:0 32px;
+    height:72px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .logo{
+    font-family:var(--serif);
+    font-size:20px;
+    letter-spacing:0.12em;
+    font-weight:600;
+    display:flex;align-items:center;gap:10px;
+  }
+  .logo .mark{
+    width:14px;height:24px;
+    background:var(--brass);
+    clip-path:polygon(0 0,100% 50%,0 100%);
+  }
+  .logo .sub{
+    font-family:var(--sans);
+    font-size:10px;
+    font-weight:400;
+    letter-spacing:0.2em;
+    color:var(--ink-mute);
+    display:block;
+    margin-top:2px;
+  }
+  nav.links{display:flex;gap:36px;font-size:13px;letter-spacing:0.08em;}
+  nav.links a{color:var(--ink-dim);transition:color 0.25s;position:relative;padding:4px 0;}
+  nav.links a:hover{color:var(--brass);}
+  .nav-cta{
+    font-size:12px;letter-spacing:0.1em;
+    border:1px solid var(--brass-soft);
+    color:var(--brass);
+    padding:9px 22px;
+    transition:all 0.25s;
+  }
+  .nav-cta:hover{background:var(--brass);color:var(--bg);}
+  .menu-btn{display:none;background:none;border:none;color:var(--ink);font-size:24px;cursor:pointer;}
+
+  @media(max-width:860px){
+    nav.links{display:none;}
+    .nav-cta{display:none;}
+    .menu-btn{display:block;}
+  }
+
+  /* === Hero === */
+  .hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    position:relative;
+    padding:140px 0 80px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:'';
+    position:absolute;
+    top:0;right:-10%;
+    width:60%;height:140%;
+    background:
+      repeating-linear-gradient(115deg, transparent 0 78px, var(--line-soft) 78px 79px);
+    opacity:0.5;
+    pointer-events:none;
+  }
+  .hero-eyebrow{
+    font-size:13px;
+    letter-spacing:0.35em;
+    color:var(--brass);
+    font-weight:500;
+    margin-bottom:28px;
+    display:flex;align-items:center;
+  }
+  .hero h1{
+    font-family:var(--serif);
+    font-size:clamp(40px,6.4vw,76px);
+    font-weight:600;
+    line-height:1.35;
+    letter-spacing:0.02em;
+    max-width:920px;
+    color:#F4F1E8;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--brass);
+    font-family:var(--serif);
+  }
+  .hero-lead{
+    margin-top:32px;
+    max-width:620px;
+    font-size:17px;
+    color:var(--ink-dim);
+    font-weight:300;
+    line-height:2;
+  }
+  .hero-actions{
+    margin-top:48px;
+    display:flex;gap:18px;flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:13px;letter-spacing:0.12em;
+    padding:16px 32px;
+    transition:all 0.25s;
+    border:1px solid transparent;
+    cursor:pointer;
+    font-family:var(--sans);
+  }
+  .btn-primary{background:var(--brass);color:#16140C;}
+  .btn-primary:hover{background:#E0BD6E;}
+  .btn-ghost{border:1px solid var(--line);color:var(--ink-dim);}
+  .btn-ghost:hover{border-color:var(--brass-soft);color:var(--brass);}
+
+  .hero-foot{
+    margin-top:96px;
+    display:flex;flex-wrap:wrap;gap:48px;
+    padding-top:36px;
+    border-top:1px solid var(--line-soft);
+  }
+  .hero-foot-item{font-size:12px;color:var(--ink-mute);letter-spacing:0.06em;line-height:1.8;}
+  .hero-foot-item b{display:block;color:var(--ink-dim);font-size:13px;font-weight:500;margin-bottom:4px;letter-spacing:0.04em;}
+
+  /* === Section generic === */
+  section{padding:120px 0;position:relative;}
+  .section-head{margin-bottom:64px;max-width:760px;}
+  .eyebrow{
+    font-size:12px;letter-spacing:0.32em;color:var(--brass);
+    font-weight:500;margin-bottom:20px;
+    display:flex;align-items:center;
+  }
+  h2{
+    font-family:var(--serif);
+    font-size:clamp(28px,4vw,42px);
+    font-weight:600;
+    line-height:1.5;
+    color:#F4F1E8;
+  }
+  .section-lead{
+    margin-top:24px;
+    color:var(--ink-dim);
+    font-size:16px;
+    line-height:2;
+    font-weight:300;
+  }
+  .alt{background:var(--bg-soft);}
+
+  /* === Philosophy section === */
+  .philo-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0;
+    border:1px solid var(--line-soft);
+  }
+  .philo-cell{
+    padding:48px;
+    border-right:1px solid var(--line-soft);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .philo-cell:nth-child(2n){border-right:none;}
+  .philo-cell .num{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:14px;
+    color:var(--brass-soft);
+    letter-spacing:0.1em;
+    margin-bottom:18px;
+    display:block;
+  }
+  .philo-cell h3{
+    font-family:var(--serif);
+    font-size:21px;
+    font-weight:600;
+    color:#F4F1E8;
+    margin-bottom:14px;
+    line-height:1.6;
+  }
+  .philo-cell p{color:var(--ink-dim);font-size:14.5px;line-height:1.95;font-weight:300;}
+  @media(max-width:780px){
+    .philo-grid{grid-template-columns:1fr;}
+    .philo-cell{border-right:none;}
+  }
+
+  /* === Quote block === */
+  .quote-block{
+    padding:100px 0;
+    text-align:center;
+    position:relative;
+  }
+  .quote-block blockquote{
+    font-family:var(--serif);
+    font-size:clamp(22px,3.4vw,34px);
+    font-weight:500;
+    line-height:1.9;
+    max-width:840px;
+    margin:0 auto;
+    color:#F4F1E8;
+  }
+  .quote-block blockquote em{color:var(--brass);font-style:italic;}
+  .quote-block cite{
+    display:block;margin-top:32px;
+    font-size:12px;letter-spacing:0.2em;color:var(--ink-mute);
+    font-style:normal;
+  }
+
+  /* === Drucker quote block === */
+  .drucker-block{
+    padding:90px 0;
+    border-top:1px solid var(--line-soft);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .drucker-inner{
+    max-width:760px;
+    margin:0 auto;
+    text-align:center;
+  }
+  .drucker-en{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:clamp(20px,3vw,30px);
+    font-weight:500;
+    line-height:1.7;
+    color:#F4F1E8;
+    letter-spacing:0.01em;
+  }
+  .drucker-attr{
+    margin-top:18px;
+    font-size:12px;
+    letter-spacing:0.28em;
+    color:var(--brass);
+    text-transform:uppercase;
+  }
+  .drucker-rule{
+    width:48px;height:1px;
+    background:var(--line);
+    margin:36px auto;
+    position:relative;
+  }
+  .drucker-rule::after{
+    content:'';
+    position:absolute;top:-1.5px;left:50%;transform:translateX(-50%);
+    width:8px;height:4px;
+    background:var(--brass);
+    clip-path:polygon(0 0,100% 50%,0 100%);
+  }
+  .drucker-jp{
+    font-size:15.5px;
+    line-height:2.1;
+    color:var(--ink-dim);
+    font-weight:300;
+    text-align:left;
+  }
+  .drucker-jp strong{color:var(--ink);font-weight:500;}
+  @media(max-width:640px){
+    .drucker-jp{text-align:center;}
+  }
+
+  /* === Services (the 3 pillars) === */
+  .pillars{display:flex;flex-direction:column;gap:0;}
+  .pillar{
+    display:grid;
+    grid-template-columns:340px 1fr;
+    gap:64px;
+    padding:64px 0;
+    border-top:1px solid var(--line-soft);
+    align-items:start;
+  }
+  .pillar:first-child{border-top:none;}
+  .pillar-head{position:sticky;top:120px;}
+  .pillar-kana{
+    font-family:var(--serif);
+    font-size:13px;
+    letter-spacing:0.3em;
+    color:var(--brass);
+    margin-bottom:16px;
+    display:block;
+  }
+  .pillar-title-jp{
+    font-family:var(--serif);
+    font-size:32px;
+    font-weight:600;
+    color:#F4F1E8;
+    margin-bottom:8px;
+    line-height:1.4;
+  }
+  .pillar-title-en{
+    font-size:11px;
+    letter-spacing:0.28em;
+    color:var(--ink-mute);
+    text-transform:uppercase;
+  }
+  .pillar-body p{color:var(--ink-dim);font-size:15.5px;line-height:2;font-weight:300;margin-bottom:24px;}
+  .pillar-body p:last-child{margin-bottom:0;}
+  .pillar-body strong{color:var(--ink);font-weight:500;}
+
+  .tag-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;}
+  .tag{
+    font-size:12px;letter-spacing:0.05em;
+    border:1px solid var(--line);
+    color:var(--ink-dim);
+    padding:8px 16px;
+    font-weight:300;
+  }
+
+  .sub-table{
+    margin-top:32px;
+    border:1px solid var(--line-soft);
+  }
+  .sub-row{
+    display:grid;
+    grid-template-columns:160px 1fr;
+    border-bottom:1px solid var(--line-soft);
+  }
+  .sub-row:last-child{border-bottom:none;}
+  .sub-row .k{
+    padding:20px 24px;
+    font-size:13px;
+    color:var(--brass);
+    letter-spacing:0.08em;
+    font-weight:500;
+    border-right:1px solid var(--line-soft);
+    background:var(--surface-2);
+  }
+  .sub-row .v{
+    padding:20px 24px;
+    font-size:14.5px;
+    color:var(--ink-dim);
+    line-height:1.95;
+    font-weight:300;
+  }
+  @media(max-width:860px){
+    .pillar{grid-template-columns:1fr;gap:24px;}
+    .pillar-head{position:static;}
+    .sub-row{grid-template-columns:1fr;}
+    .sub-row .k{border-right:none;border-bottom:1px solid var(--line-soft);}
+  }
+
+  /* === Flow diagram (relation levels) === */
+  .flow{
+    display:flex;
+    flex-direction:column;
+    border:1px solid var(--line-soft);
+  }
+  .flow-row{
+    display:grid;
+    grid-template-columns:100px 1fr 240px;
+    border-bottom:1px solid var(--line-soft);
+  }
+  .flow-row:last-child{border-bottom:none;}
+  .flow-row.is-pse{background:var(--brass-glow);}
+  .flow-cell{padding:28px 28px;}
+  .flow-cell.lv{
+    border-right:1px solid var(--line-soft);
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:26px;
+    color:var(--ink-mute);
+    display:flex;align-items:center;
+  }
+  .flow-row.is-pse .flow-cell.lv{color:var(--brass);}
+  .flow-cell.body h4{
+    font-size:16px;font-weight:500;color:#F4F1E8;margin-bottom:8px;letter-spacing:0.04em;
+  }
+  .flow-cell.body p{font-size:13.5px;color:var(--ink-dim);font-weight:300;line-height:1.85;}
+  .flow-cell.tagcell{
+    border-left:1px solid var(--line-soft);
+    display:flex;align-items:center;justify-content:flex-start;
+    font-size:12px;color:var(--ink-mute);letter-spacing:0.06em;
+    font-weight:300;
+  }
+  .flow-cell.tagcell .pill{
+    border:1px solid var(--line);
+    padding:6px 14px;
+    font-size:11.5px;
+    color:var(--ink-dim);
+  }
+  .flow-row.is-pse .flow-cell.tagcell .pill{border-color:var(--brass-soft);color:var(--brass);}
+  @media(max-width:760px){
+    .flow-row{grid-template-columns:1fr;}
+    .flow-cell.lv{border-right:none;border-bottom:1px solid var(--line-soft);padding:16px 28px;}
+    .flow-cell.tagcell{border-left:none;border-top:1px solid var(--line-soft);}
+  }
+
+  /* === People / Members === */
+  .members{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
+  .member{border:1px solid var(--line-soft);padding:40px;}
+  .member .role{
+    font-size:11px;letter-spacing:0.24em;color:var(--brass);margin-bottom:18px;
+  }
+  .member h3{
+    font-family:var(--serif);font-size:24px;font-weight:600;color:#F4F1E8;margin-bottom:4px;
+  }
+  .member .romaji{font-size:11px;letter-spacing:0.2em;color:var(--ink-mute);margin-bottom:24px;display:block;}
+  .member p{font-size:14px;color:var(--ink-dim);line-height:2;font-weight:300;margin-bottom:16px;}
+  .member .keywords{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+  .member .keywords span{font-size:11px;color:var(--ink-mute);border:1px solid var(--line);padding:5px 12px;}
+  @media(max-width:780px){.members{grid-template-columns:1fr;}}
+
+  /* === Network / group structure === */
+  .group-diagram{
+    border:1px solid var(--line-soft);
+    padding:56px;
+  }
+  .gd-top{
+    text-align:center;
+    margin-bottom:48px;
+  }
+  .gd-top .name{
+    font-family:var(--serif);font-size:22px;font-weight:600;color:var(--brass);letter-spacing:0.1em;
+  }
+  .gd-top .tagline{font-size:11px;letter-spacing:0.3em;color:var(--ink-mute);margin-top:10px;}
+  .gd-line{
+    height:48px;
+    border-left:1px solid var(--line);
+    margin:0 auto;
+    width:1px;
+  }
+  .gd-row{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+  }
+  .gd-box{
+    border:1px solid var(--line-soft);
+    padding:28px 24px;
+    text-align:center;
+    position:relative;
+  }
+  .gd-box.active{border-color:var(--brass-soft);background:var(--brass-glow);}
+  .gd-box .entity{font-family:var(--serif);font-size:17px;font-weight:600;color:#F4F1E8;margin-bottom:6px;}
+  .gd-box .entity-sub{font-size:11px;color:var(--ink-mute);letter-spacing:0.05em;margin-bottom:14px;}
+  .gd-box p{font-size:12.5px;color:var(--ink-dim);font-weight:300;line-height:1.8;}
+  .gd-box.active .entity{color:var(--brass);}
+  @media(max-width:780px){
+    .gd-row{grid-template-columns:1fr;}
+    .group-diagram{padding:32px;}
+  }
+
+  /* === Column / Insight === */
+  .insight-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:var(--line-soft);
+    border:1px solid var(--line-soft);
+  }
+  .insight-card{
+    background:var(--surface);
+    padding:32px 26px;
+    transition:background 0.25s;
+  }
+  .insight-card:hover{background:var(--surface-2);}
+  .insight-card .ino{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--brass-soft);margin-bottom:14px;display:block;}
+  .insight-card h4{font-size:14.5px;font-weight:500;color:#F4F1E8;margin-bottom:10px;line-height:1.7;}
+  .insight-card p{font-size:12.5px;color:var(--ink-dim);font-weight:300;line-height:1.8;}
+  @media(max-width:860px){.insight-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:540px){.insight-grid{grid-template-columns:1fr;}}
+
+  /* === CTA / Contact === */
+  .contact-wrap{
+    border:1px solid var(--line-soft);
+    padding:72px;
+    display:grid;grid-template-columns:1.1fr 1fr;gap:64px;
+  }
+  .contact-info h3{font-family:var(--serif);font-size:26px;font-weight:600;color:#F4F1E8;margin-bottom:24px;line-height:1.6;}
+  .contact-info p{color:var(--ink-dim);font-size:14.5px;line-height:2;font-weight:300;margin-bottom:32px;}
+  .info-line{display:flex;gap:16px;font-size:13.5px;color:var(--ink-dim);margin-bottom:14px;}
+  .info-line .k{color:var(--ink-mute);min-width:88px;letter-spacing:0.08em;}
+  .form-stack{display:flex;flex-direction:column;gap:18px;}
+  .form-stack label{font-size:12px;letter-spacing:0.12em;color:var(--ink-mute);margin-bottom:8px;display:block;}
+  .form-stack input,.form-stack select,.form-stack textarea{
+    width:100%;
+    background:var(--surface-2);
+    border:1px solid var(--line);
+    color:var(--ink);
+    padding:13px 16px;
+    font-size:14px;
+    font-family:var(--sans);
+    font-weight:300;
+  }
+  .form-stack textarea{min-height:120px;resize:vertical;}
+  .form-stack input:focus,.form-stack select:focus,.form-stack textarea:focus{outline:none;border-color:var(--brass-soft);}
+  @media(max-width:860px){.contact-wrap{grid-template-columns:1fr;padding:40px 28px;gap:40px;}}
+
+  /* === Footer === */
+  footer{
+    border-top:1px solid var(--line-soft);
+    padding:64px 0 40px;
+  }
+  .foot-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:40px;}
+  .foot-brand .logo{margin-bottom:16px;}
+  .foot-brand p{font-size:12.5px;color:var(--ink-mute);line-height:1.9;max-width:320px;font-weight:300;}
+  .foot-links{display:flex;gap:48px;flex-wrap:wrap;}
+  .foot-col h5{font-size:11px;letter-spacing:0.2em;color:var(--brass-soft);margin-bottom:18px;}
+  .foot-col a{display:block;font-size:13px;color:var(--ink-dim);margin-bottom:12px;font-weight:300;}
+  .foot-col a:hover{color:var(--brass);}
+  .foot-bottom{
+    margin-top:64px;padding-top:28px;border-top:1px solid var(--line-soft);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;
+    font-size:11.5px;color:var(--ink-mute);letter-spacing:0.06em;
+  }
+
+  /* === Case library === */
+  .case-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--line-soft);
+    border:1px solid var(--line-soft);
+  }
+  .case-card{
+    background:var(--surface);
+    padding:30px 26px;
+    transition:background 0.25s;
+    display:flex;flex-direction:column;
+  }
+  .case-card:hover{background:var(--surface-2);}
+  .case-card .cno{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:13px;
+    color:var(--brass-soft);
+    letter-spacing:0.1em;
+    margin-bottom:14px;
+  }
+  .case-card h4{font-size:15px;font-weight:500;color:#F4F1E8;margin-bottom:10px;line-height:1.7;}
+  .case-card p{font-size:12.5px;color:var(--ink-dim);font-weight:300;line-height:1.85;flex-grow:1;}
+  .case-card .theme{
+    margin-top:14px;
+    font-size:11px;letter-spacing:0.08em;color:var(--ink-mute);
+    border-top:1px solid var(--line-soft);
+    padding-top:12px;
+  }
+  @media(max-width:860px){.case-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:540px){.case-grid{grid-template-columns:1fr;}}
+
+  .case-group-label{
+    font-size:11px;letter-spacing:0.3em;color:var(--brass);
+    margin:56px 0 18px;
+    display:flex;align-items:center;
+  }
+  .case-group-label:first-of-type{margin-top:0;}
+
+  /* === Mentoring theme rows === */
+  .theme-block{
+    border:1px solid var(--line-soft);
+    margin-bottom:1px;
+  }
+  .theme-block-inner{
+    display:grid;
+    grid-template-columns:280px 1fr;
+  }
+  .theme-side{
+    padding:36px 32px;
+    border-right:1px solid var(--line-soft);
+    background:var(--surface-2);
+  }
+  .theme-side .tno{
+    font-family:var(--serif);font-style:italic;font-size:15px;color:var(--brass);
+    letter-spacing:0.1em;margin-bottom:12px;display:block;
+  }
+  .theme-side h4{font-family:var(--serif);font-size:19px;font-weight:600;color:#F4F1E8;line-height:1.6;margin-bottom:10px;}
+  .theme-side .ten{font-size:11px;letter-spacing:0.2em;color:var(--ink-mute);}
+  .theme-main{padding:36px 36px;}
+  .theme-main p{font-size:14.5px;color:var(--ink-dim);line-height:2;font-weight:300;margin-bottom:14px;}
+  .theme-main p:last-child{margin-bottom:0;}
+  .theme-main strong{color:var(--ink);font-weight:500;}
+  @media(max-width:860px){
+    .theme-block-inner{grid-template-columns:1fr;}
+    .theme-side{border-right:none;border-bottom:1px solid var(--line-soft);}
+  }
+
+  /* === External link card === */
+  .ext-card{
+    border:1px solid var(--line-soft);
+    padding:56px;
+    display:grid;
+    grid-template-columns:1fr auto;
+    align-items:center;
+    gap:40px;
+  }
+  .ext-card .label{
+    font-size:11px;letter-spacing:0.3em;color:var(--brass);margin-bottom:18px;
+  }
+  .ext-card h3{font-family:var(--serif);font-size:28px;font-weight:600;color:#F4F1E8;margin-bottom:16px;line-height:1.6;}
+  .ext-card p{font-size:14.5px;color:var(--ink-dim);line-height:2;font-weight:300;max-width:560px;}
+  @media(max-width:760px){
+    .ext-card{grid-template-columns:1fr;padding:36px 28px;text-align:left;}
+  }
+
+  /* fade-in */
+  .fade-up{opacity:0;transform:translateY(28px);transition:opacity 0.8s ease, transform 0.8s ease;}
+  .fade-up.visible{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#top" class="logo">
+      <span class="mark"></span>
+      <span>
+        ProfeSsions Edge
+        <span class="sub">合同会社プロフェッションズエッジ</span>
+      </span>
+    </a>
+    <nav class="links">
+      <a href="#philosophy">理念</a>
+      <a href="#mentoring">メンタリング</a>
+      <a href="#consulting">コンサルティング</a>
+      <a href="#chitekium">AI事業</a>
+      <a href="#members">代表・体制</a>
+    </nav>
+    <a href="#contact" class="nav-cta">お問い合わせ</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-eyebrow"><span class="edge-tick"></span>PROFESSIONS EDGE LLC — THINK WITH CLIENT</div>
+      <h1>教養という<em>刃</em>を、<br>経営の意思決定に。</h1>
+      <p class="hero-lead">
+        合同会社ProfeSsions Edgeは、経営者自身の「思考の前提」を扱うメンタリング、経営学という社会科学に基づく科学的コンサルティング、そしてAIと人間の共生を設計するAIアライメント事業の三領域を通じて、経営者が自らの理念を生み出し、実現するための土台を共に築きます。
+      </p>
+      <div class="hero-actions">
+        <a href="#philosophy" class="btn btn-primary">私たちの考え方を読む</a>
+        <a href="#contact" class="btn btn-ghost">ご相談はこちら</a>
+      </div>
+      <div class="hero-foot">
+        <div class="hero-foot-item"><b>代表社員</b>栗原 正樹 / 茨城キリスト教大学経営学部教授・経営学者</div>
+        <div class="hero-foot-item"><b>事業構成</b>教育・研修事業（メンタリング） / コンサルティング事業（トップコンサルティング） / AI事業（チテキウム）</div>
+        <div class="hero-foot-item"><b>対象</b>中小企業の経営者・次期経営者・経営者団体・教育機関</div>
+        <div class="hero-foot-item"><b>提供形式</b>ケースメソッドによる個別指導 / 継続的な対話契約 / トップコンサルティング</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DRUCKER QUOTE ============ -->
+  <section class="drucker-block">
+    <div class="wrap">
+      <div class="drucker-inner fade-up">
+        <p class="drucker-en">
+          &ldquo;Management is a liberal art.&rdquo;
+        </p>
+        <div class="drucker-attr">Peter F. Drucker</div>
+        <div class="drucker-rule"></div>
+        <p class="drucker-jp">
+          経営とは、人間・社会・価値・責任を扱う営みです。だからこそ経営者は、単なる管理技術者では足りません。<strong>人間と社会を理解し、自分自身を律し、判断し、成果に結びつける教養</strong>を持たなければならない——私たちは、この言葉を事業のすべての出発点としています。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PHILOSOPHY ============ -->
+  <section id="philosophy" class="alt">
+    <div class="wrap">
+      <div class="section-head fade-up">
+        <div class="eyebrow"><span class="edge-tick"></span>OUR PHILOSOPHY</div>
+        <h2>利益は手段である。<br>目的は、経営者の中にしかない。</h2>
+        <p class="section-lead">
+          企業経営の真の目的は、事業を通じて経営者の想いや夢を実現することです。そしてその想いや夢は社会の中にこそあるものです。利益もキャッシュ・フローも、そのための手段にすぎません。経営学は「どのように経営すべきか」を教えてくれますが、「経営の結果として何をしたいのか」は、経営者自身の中にしかありません。私たちは、その想いを実現するために、クライアントと共に歩み続けます。
+        </p>
+      </div>
+
+      <div class="philo-grid fade-up">
+        <div class="philo-cell">
+          <span class="num">Ⅰ</span>
+          <h3>結果は約束しない。<br>提案の根拠に、責任を持つ。</h3>
+          <p>
+            コンサルタントは、結果に対して責任を取ることができません。結果は様々な要因が複雑に絡み合って決まるものであり、予期せぬ成功があるように、予期せぬ失敗もあるからです。私たちが負うのは「結果責任」ではなく、提案の妥当性に対する責任である「プロセス責任」です。この責任から、決して逃げません。
+          </p>
+        </div>
+        <div class="philo-cell">
+          <span class="num">Ⅱ</span>
+          <h3>経営学は、企業経営の<br>取扱説明書である。</h3>
+          <p>
+            私たちのコンサルティングは、個人的な経験談に基づくものではありません。経営学という社会科学——過去の経営行動を分析し、成功・失敗の要因をパターン化した知見の集積——を前提とした、仮説と検証に基づく科学的なコンサルティングです。
+          </p>
+        </div>
+        <div class="philo-cell">
+          <span class="num">Ⅲ</span>
+          <h3>データではなく、<br>背景（コンテクスト）を読む。</h3>
+          <p>
+            私たちは「エビデンスベースドマネジメント」を盲信しません。本当に重要なのは、データそのものではなく、なぜそのような結果が生まれたのかという背景の理解です。私たちは、その背景を踏まえた「コンテクストベースドマネジメント」を実践します。
+          </p>
+        </div>
+        <div class="philo-cell">
+          <span class="num">Ⅳ</span>
+          <h3>教養とは、自分で<br>決めるための思考の軸。</h3>
+          <p>
+            教養とは「他者に依存せず、自分自身を置かれた環境や状況の中で適切に位置付け、自ら考え決定するための思考の軸」です。経営判断の質は、手法の知識量ではなく、その手法を選択する根拠となる無意識の価値観によって決まります。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUOTE ============ -->
+  <section class="quote-block">
+    <div class="wrap">
+      <blockquote class="fade-up">
+        理念を<em>実現する</em>前に、<br>理念を<em>生み出す力</em>を。
+      </blockquote>
+      <cite>THINK WITH CLIENT — 栗原 正樹</cite>
+    </div>
+  </section>
+
+  <!-- ============ MENTORING (heavy content) ============ -->
+  <section id="mentoring">
+    <div class="wrap">
+      <div class="section-head fade-up">
+        <div class="eyebrow"><span class="edge-tick"></span>BUSINESS 01 — MENTORING</div>
+        <h2>理念を生み出す力を育てる、<br>思考のOSのアップデート。</h2>
+        <p class="section-lead">
+          コンサルティングが「経営者の理念を実現するための相談」であるのに対し、メンタリングは、その理念そのものを生み出す土台——経営者自身の<strong style="color:var(--ink);font-weight:500;">思考の前提（思考のOS）</strong>を扱います。経営判断の質は、手法の知識量ではなく、その手法を選択する根拠となっている無意識の価値観によって決まるからです。教養とは、他者に依存せず、置かれた環境の中で自ら考え決定するための思考の軸であり、自己決定の度合いは人生の精神的満足度そのものに直結します。
+        </p>
+      </div>
+
+      <div class="case-group-label fade-up"><span class="edge-tick"></span>準備編 — 経営学ケーススタディ（コンサルティングで用いる12のケース）</div>
+
+      <div class="theme-block fade-up">
+        <div class="theme-block-inner">
+          <div class="theme-side">
+            <span class="tno">準備</span>
+            <h4>まず、経営学という<br>「道具」に触れる</h4>
+            <span class="ten">CASE METHOD WARM-UP</span>
+          </div>
+          <div class="theme-main">
+            <p>
+              哲学的な問いに入る前に、まずは<strong>経営学の12のケース</strong>をケースメソッドで体験していただきます。
+            </p>
+            <p>
+              これは、経営の「正しい考え方の型」を一度体に通すための準備運動です。型を知らないまま「自分の理念とは何か」という抽象的な問いに向き合うと、議論が発散してしまいます。先に経営学という共通言語・思考の道具に触れておくことで、その先にある哲学・社会科学の問い——<strong>「その道具を、自分は何のために、どう使いたいのか」</strong>——が、初めて自分の言葉で語れるようになります。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-group-label fade-up" style="margin-top:32px;"><span class="edge-tick"></span>Ⅰ. 経営の根幹 — 理念・戦略・コンサルティングの定義</div>
+      <div class="case-grid fade-up">
+        <div class="case-card">
+          <span class="cno">Case 01</span>
+          <h4>科学的コンサルティングとは</h4>
+          <p>経営とは「目的達成のために、目的から逆算し現在を管理するように行動すること」。コンサルタントは結果責任を負わないが、提案の妥当性に対するプロセス責任を負う、という関係の出発点を定義します。</p>
+          <div class="theme">経営の定義 / プロセス責任 / コンテクストベースドマネジメント</div>
+        </div>
+        <div class="case-card">
+          <span class="cno">Case 02</span>
+          <h4>経営理念とパーパス</h4>
+          <p>経営理念・パーパス・ドメインを階層的に整理。理念は「人・モノ・カネ・情報」を引き寄せるシグナルであり、ドメインは企業が決めるものではなく、社会から実際に機能していると見なされる領域であることを学びます。</p>
+          <div class="theme">シグナリング / パーパス経営 / コア・コンピタンスとドメイン</div>
+        </div>
+        <div class="case-card">
+          <span class="cno">Case 03</span>
+          <h4>経営戦略・戦略転換点</h4>
+          <p>BCGマトリクス（PPM）による全社戦略の俯瞰と、ポジショニングビュー・リソースベースドビューによる事業戦略の立案。インテル元CEOグローブの「戦略転換点」を見極める視点を扱います。</p>
+          <div class="theme">BCGマトリクス / 5フォース分析 / VRIO・コア・コンピタンス・ケイパビリティ</div>
+        </div>
+      </div>
+
+      <div class="case-group-label fade-up"><span class="edge-tick"></span>Ⅱ. 競争戦略 — 市場における戦い方</div>
+      <div class="case-grid fade-up">
+        <div class="case-card">
+          <span class="cno">Case 04</span>
+          <h4>ポジショニングビューとリソースベースドビューの融合</h4>
+          <p>「外部環境のどこに立つか」と「自社が何を持っているか」という二つの立場は、対立するだけでなく多くの場面で融合可能です。SWOT分析を軸に、両者を技術的に統合する視点を提供します。</p>
+          <div class="theme">外部環境分析 × 内部資源分析 / SWOT分析の再構築</div>
+        </div>
+        <div class="case-card">
+          <span class="cno">Case 05</span>
+          <h4>ニッチ戦略とブルー・オーシャン戦略</h4>
+          <p>限られた資源で大手と競合せず、独自の市場を切り拓くための戦略類型。市場のサイズを自らの意図で再定義し、競争のない領域で「金のなる木」を育てる視点を扱います。</p>
+          <div class="theme">集中戦略 / 差別化集中戦略 / 市場の再定義</div>
+        </div>
+        <div class="case-card">
+          <span class="cno">Case 06</span>
+          <h4>ブランド戦略と市場創造</h4>
+          <p>製品・サービスの価格と価値の関係だけでなく、市場からの好意（Goodwill）の蓄積によって、新しい市場そのものを創造するブランディングのメカニズムを扱います。</p>
+          <div class="theme">ブランド価値 / 市場の期待を超える / Goodwillの蓄積</div>
+        </div>
+      </div>
+
+      <div class="case-group-label fade-up"><span class="edge-tick"></span>Ⅲ. 組織と人 — モチベーション・意思決定・統制</div>
+      <div class="case-grid fade-up">
+        <div class="case-card">
+          <span class="cno">Case 07</span>
+          <h4>モチベーション</h4>
+          <p>従業員のモチベーション低下という現象の背景にある構造的な要因を分析。経営理念が浸透していない組織で何が起きるか、内発的動機と外発的動機の設計を扱います。</p>
+          <div class="theme">内発的動機づけ / 理念の浸透と一貫性 / XY理論</div>
+        </div>
+        <div class="case-card">
+          <span class="cno">Case 08</span>
+          <h4>官僚制組織における意思決定と心理的バイアス</h4>
+          <p>大きな組織が陥りやすい意思決定の歪み——プロスペクト理論に基づく損失回避や、前例主義といった心理的バイアスを構造として理解し、組織設計でどう緩和するかを検討します。</p>
+          <div class="theme">官僚制の機能と逆機能 / 損失回避バイアス</div>
+        </div>
+        <div class="case-card">
+          <span class="cno">Case 09</span>
+          <h4>内部統制の効果と限界</h4>
+          <p>内部統制と柔軟な思考の対立というテーマを通じて、ルールによる統制が組織にもたらす効果と、同時に生まれる硬直化という副作用のバランスを検討します。</p>
+          <div class="theme">統制と柔軟性のトレードオフ</div>
+        </div>
+        <div class="case-card">
+          <span class="cno">Case 10</span>
+          <h4>組織の条件適合理論</h4>
+          <p>「優れた組織構造」が一つに定まるわけではなく、事業環境や戦略によって最適な組織形態は異なるというコンティンジェンシー理論を、自社の状況に当てはめて検討します。</p>
+          <div class="theme">コンティンジェンシー理論 / 環境適合</div>
+        </div>
+      </div>
+
+      <div class="case-group-label fade-up"><span class="edge-tick"></span>Ⅳ. 不確実性の経営 — 予測不能な未来への対応</div>
+      <div class="case-grid fade-up">
+        <div class="case-card">
+          <span class="cno">Case 11</span>
+          <h4>不連続な環境における経営戦略立案</h4>
+          <p>未来が予測可能であることを前提とした「王道的経営観（コーゼーション）」が機能しない、不連続な変化（パラダイムシフト）が起きた環境下での戦略立案のアプローチを扱います。</p>
+          <div class="theme">コーゼーション / 不連続な変化への対応</div>
+        </div>
+        <div class="case-card">
+          <span class="cno">Case 12</span>
+          <h4>社会のフラクタル構造を利用した創発戦略</h4>
+          <p>予測不能な未来を前提に、エフェクチュエーション（想定損失に基づく意思決定）と「試行錯誤の共同体」、社会の自己相似性（フラクタル）から新しい成功パターンを発見する創発戦略を扱います。</p>
+          <div class="theme">エフェクチュエーション / 試行錯誤の共同体 / 創発戦略（ミンツバーグ）</div>
+        </div>
+        <div class="case-card">
+          <span class="cno">Case 13</span>
+          <h4>マネジメント・マインド — GAILの視点</h4>
+          <p>「子供英会話教室」事例を通じ、G（目標達成）・A（適応）・I（統合）・L（潜在的パターンの維持）という4つの視点から企業を診断します。理念の実現が、無計画な拡大によって崩壊する連鎖反応を学びます。</p>
+          <div class="theme">パーソンズのAGIL図式 / XY理論 / コア・コンピタンスの脆弱性</div>
+        </div>
+      </div>
+
+      <div class="case-group-label fade-up" style="margin-top:56px;"><span class="edge-tick"></span>思考のOS — 哲学・社会科学を土台とする問い</div>
+
+
+      <div class="theme-block fade-up">
+        <div class="theme-block-inner">
+          <div class="theme-side">
+            <span class="tno">問 Ⅰ</span>
+            <h4>正しさとは何か<br>義務論と目的論</h4>
+            <span class="ten">DEONTOLOGY / TELEOLOGY</span>
+          </div>
+          <div class="theme-main">
+            <p>
+              行動の正しさを「動機」に求めるカントの義務論と、「結果」に求めるベンサム・ミルの功利主義（目的論）は、現代の私たちにも根本的な問いを投げかけ続けています。経営判断において「ルールを守ること」と「最大多数の最大幸福をもたらすこと」が対立するとき、経営者はどちらを判断の軸とするべきか。
+            </p>
+            <p>
+              実際の企業事例——不採算工場の売却が株主利益（目的論的な正しさ）には適っていても、地域雇用や従業員（義務論的な正しさ）の観点からは「良い会社」と言えるのか——を題材に、自社の意思決定がどちらの「正しさ」に依拠しているのかを言語化するトレーニングを行います。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="theme-block fade-up">
+        <div class="theme-block-inner">
+          <div class="theme-side">
+            <span class="tno">問 Ⅱ</span>
+            <h4>自由とは何か<br>実存主義と構造主義</h4>
+            <span class="ten">EXISTENTIALISM / STRUCTURALISM</span>
+          </div>
+          <div class="theme-main">
+            <p>
+              サルトルやニーチェの実存主義は「人が何をすべきかは事前に決まっておらず、自らの行動を通じて自己を定義する」と説きました。一方、ソシュールやレヴィ＝ストロースの構造主義は「人に自己決定の余地はなく、与えられた構造（仕組み）の中で判断せざるを得ない」と考えます。
+            </p>
+            <p>
+              経営者は「自社の選択が市場や組織構造に縛られている」と感じる場面と、「自社の意志で未来を切り開ける」と感じる場面の両方に向き合います。この対立する二つの世界観のどちらを前提に経営判断を行っているのかを自覚することは、自社の戦略の<strong>限定合理性</strong>を発見する第一歩になります。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="theme-block fade-up">
+        <div class="theme-block-inner">
+          <div class="theme-side">
+            <span class="tno">問 Ⅲ</span>
+            <h4>「良い会社」とは何か<br>CSRと見えざる資産</h4>
+            <span class="ten">CSR / INVISIBLE ASSETS</span>
+          </div>
+          <div class="theme-main">
+            <p>
+              「不採算部門を売却し、株主利益を最大化する経営判断は正しいか。もし正しいとして、その企業は『良い』会社か」——この問いは、企業にとっての目的と手段の関係を浮かび上がらせます。従業員にとっての「働くこと」、地域にとっての「企業誘致」、株主にとっての「投資」は、いずれも手段であって目的ではありません。
+            </p>
+            <p>
+              社会からの感謝・信頼（Goodwill）は、会計上「のれん」として一部しか可視化されない<strong>見えざる資産</strong>ですが、同業他社を超える収益力の源泉です。短期的な株価上昇という目的論的な正しさと、長期的な信頼の蓄積という、企業の持続可能性そのものを左右する視点の往復をトレーニングします。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="theme-block fade-up">
+        <div class="theme-block-inner">
+          <div class="theme-side">
+            <span class="tno">問 Ⅳ</span>
+            <h4>不確定な情報下での<br>経営判断</h4>
+            <span class="ten">DECISION UNDER UNCERTAINTY</span>
+          </div>
+          <div class="theme-main">
+            <p>
+              人間は、プロスペクト理論にあるように、期待よりも損失を過大評価し、確率的に考えれば採用すべき選択を、未熟な直感によって否決してしまいます。脳は思考のエネルギーを節約するために、無意識下で「思考のショートカット＝直観」に頼るようにできているからです。
+            </p>
+            <p>
+              自らの未熟な直感に従わず、論理に基づいた判断をするためには、意識的な訓練が必要です。情報が不足し、不確実性の高い状況において、何を根拠に、どこまで踏み込んで判断するか。この「直感と論理の往復」を、実際の経営判断の場面に即して鍛えていきます。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="theme-block fade-up">
+        <div class="theme-block-inner">
+          <div class="theme-side">
+            <span class="tno">問 Ⅴ</span>
+            <h4>人生というゲームの<br>「設定」を理解する</h4>
+            <span class="ten">SOCIAL SCIENCE OVERVIEW</span>
+          </div>
+          <div class="theme-main">
+            <p>
+              私たちは資本主義や民主主義という社会の仕組みの中で生きていますが、その成立ちや原理を理解する機会はほとんどありません。ゲームのキャラクターが、プレイするゲームの世界の成立ちを理解しないままプレイすれば、高い成果を得ることは難しい——これは私たちの社会にもそのまま当てはまります。
+            </p>
+            <p>
+              経済（資本主義・社会主義という運営方法とその功罪）、政治（民主主義と独裁制における社会目的の設定）、法（規範・慣習法・ハイコンテクスト社会とローコンテクスト社会）という社会の構成原理を総論的に整理し、経営判断の背景にある「社会という舞台の設定」そのものへの理解を深めます。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="theme-block fade-up">
+        <div class="theme-block-inner">
+          <div class="theme-side">
+            <span class="tno">問 Ⅵ</span>
+            <h4>AI共生時代に<br>残る人間の役割</h4>
+            <span class="ten">AI &amp; LIBERAL ARTS</span>
+          </div>
+          <div class="theme-main">
+            <p>
+              AIの進歩は、これまで希少だった「道具を使う側の能力（指示を出す力）」の価値を急速に失わせています。AIや機械は「どのようにやるか」と「具体的に実行する」を担えますが、本質的に「なぜやるのか」を考え、その判断に責任を負う能力を持ちません。
+            </p>
+            <p>
+              AI共生時代における人間の役割とは、<strong>判断と責任をとる役割</strong>であり、その思考軸こそが教養です。教養は、確証バイアスのように都合よく世界を認識してしまう私たちの認識そのものを変え、認識が変われば見える世界が変わります。メンタリングは、この「真実の目」を育てるプロセスです。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="fade-up" style="margin-top:48px;">
+        <div class="sub-table">
+          <div class="sub-row">
+            <div class="k">プログラム構成</div>
+            <div class="v">準備編（経営学ケーススタディ）→ 哲学・社会科学編（思考のOS）という2段階構成。ケースメソッドを用いた60分の指導（複数回）と対話で構成される基本プログラムです。修了後は、継続的な対話契約に移行します。</div>
+          </div>
+          <div class="sub-row">
+            <div class="k">実施形態</div>
+            <div class="v"><strong>個別メンタリング</strong>を基本としますが、ご希望により<strong>複数人での集団開催</strong>も可能です。経営幹部チームや後継者候補同士でケースを議論する形式は、組織内の思考の前提を揃える機会としても有効です。</div>
+          </div>
+          <div class="sub-row">
+            <div class="k">対象</div>
+            <div class="v">経営者本人。次期経営者・後継者、経営幹部のご相談・集団開催にも対応します。</div>
+          </div>
+          <div class="sub-row">
+            <div class="k">対応</div>
+            <div class="v">代表・栗原正樹のみが担当します。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PILLAR 2: コンサルティング ============ -->
+  <section id="consulting" class="alt">
+    <div class="wrap">
+      <div class="section-head fade-up">
+        <div class="eyebrow"><span class="edge-tick"></span>BUSINESS 02 — TOP CONSULTING</div>
+        <h2>経営学という、<br>企業経営の取扱説明書。</h2>
+        <p class="section-lead">
+          私たちが提供するコンサルティングは、<strong style="color:var(--ink);font-weight:500;">トップコンサルティング</strong>です。これは経営者個人とその意思決定そのものを対象とする総合的な助言であり、特定分野に特化した個別コンサルティングとは異なります。クライアントが「してほしいこと」をそのまま聞くのではなく、経営理念やあるべき姿に照らして「本当にすべきこと」を特定するヒアリングから始まります。経営企画室のような社内機能を持たない中小企業にこそ、この支援が必要だと考えています。
+        </p>
+        <p class="section-lead">
+          経営学には様々な学派がありますが、弊社は<strong style="color:var(--ink);font-weight:500;">制度派経済学</strong>の流れを汲み、ピーター・ドラッカーの経営思想と同系です。利益そのものは目的ではなく、経営者が達成したい目的を実現するためのクリアすべき制約条件と考えます。
+        </p>
+        <p class="section-lead">
+          経営学は、過去の経営行動を分析し、成功・失敗の要因をパターン化した社会科学です。目的を定めることが出来れば、それを実現するためのツールとして、経営学は非常に優秀な道具です。私たちのコンサルティングは、個人的な経験談ではなく、この経営学の理論体系を前提とした、仮説と検証に基づく科学的なコンサルティングです。重要なのは、データそのものではなく、なぜそのような結果が生まれたのかという背景（コンテクスト）を読み解く、<strong style="color:var(--ink);font-weight:500;">コンテクストベースドマネジメント</strong>の実践です。
+        </p>
+        <p class="section-lead">
+          さらに代表の栗原は、監査法人での経験や税理士としての実務経験も豊富であり、単に大学で会計学・監査論・経営学を担当する研究者としてだけでなく、実務家×研究者としてのハイブリッドかつ総合的な専門性を併せ持ちます。<strong style="color:var(--ink);font-weight:500;">社会学を応用したシステム分析</strong>に基づき、理念から数値計画・管理体制まで一貫した支援を提供します。
+        </p>
+      </div>
+
+      <div class="case-group-label fade-up"><span class="edge-tick"></span>Ⅰ. 診断の視座 — 「何が起きているか」ではなく「なぜ起きているか」</div>
+      <div class="theme-block fade-up">
+        <div class="theme-block-inner">
+          <div class="theme-side">
+            <span class="tno">視座 1</span>
+            <h4>対症療法と、<br>メカニズムの修正</h4>
+            <span class="ten">SYMPTOM vs. MECHANISM</span>
+          </div>
+          <div class="theme-main">
+            <p>
+              経営者へのヒアリングは、「今、何が起きているか」という現象の確認から始まりますが、コンサルティングの本体は、その<strong>背景にあるメカニズム——「なぜ起きているか」——の分析</strong>にあります。現象そのものへの対応（対症療法）は当然必要ですが、それだけでは同じ問題が形を変えて再発します。
+            </p>
+            <p>
+              メカニズムの分析結果に応じて、必要があれば、組織や仕組みそのものを組み替える<strong>リストラクチャリング（構造の再設計）</strong>を指導します。逆に、構造そのものに問題がなく、現象が一時的・偶発的なものであれば、構造に手を入れず対症療法のみで十分な場合もあります。「何でも組み替える」のではなく、構造を変えるべき場面と、変えるべきでない場面を見極めることが診断の核心です。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-group-label fade-up"><span class="edge-tick"></span>Ⅱ. 手法 — 社会学を応用したシステム分析</div>
+      <div class="theme-block fade-up">
+        <div class="theme-block-inner">
+          <div class="theme-side">
+            <span class="tno">視座 2</span>
+            <h4>安定化のアドバイスも、<br>変化のアドバイスも</h4>
+            <span class="ten">STABILITY &amp; CHANGE</span>
+          </div>
+          <div class="theme-main">
+            <p>
+              この診断の手法は、<strong>社会学を応用したシステム分析</strong>です。企業という組織を一つの社会システムとして捉え、その時々の段階に応じて、組織を「安定化させる」アドバイスも、「変化させる」アドバイスも行います。
+            </p>
+            <p>
+              安定化が必要な局面では、パーソンズの<strong>AGIL図式</strong>（目標達成・適応・統合・潜在的パターンの維持）やマートンの機能主義のように、組織が秩序を保ち、各部分が全体の維持にどう機能しているかという「伝統的なシステム」の視点から、まとまりを保つ仕組みを診断します。一方、変化が必要な局面では、<strong>カオス理論に基づく創発の誘発</strong>や、複雑システムの制御という視点から、新しいパターンが生まれる余地をどう作るか、試行錯誤をどう組織的に支えるかを設計します。
+            </p>
+            <p>
+              重要なのは、この二つの視点が対立するものではなく、<strong>企業の段階によって使い分けるべき道具</strong>であるということです。安定を求める時期に変化を煽れば組織は崩れ、変化が必要な時期に安定だけを求めれば衰退します。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-group-label fade-up"><span class="edge-tick"></span>Ⅲ. 処方 — ケースで学んだ理論を、処方箋として用いる</div>
+      <div class="theme-block fade-up">
+        <div class="theme-block-inner">
+          <div class="theme-side">
+            <span class="tno">視座 3</span>
+            <h4>個別理論という、<br>処方箋</h4>
+            <span class="ten">THEORIES AS PRESCRIPTIONS</span>
+          </div>
+          <div class="theme-main">
+            <p>
+              準備編のケースメソッドで扱う経営理念とパーパス、競争戦略、モチベーション、内部統制、創発戦略といった個別の経営理論は、汎用的な「共通言語」であると同時に、システム分析の結果に対応する<strong>具体的な処方箋</strong>として機能します。
+            </p>
+            <p>
+              システム分析によって「どこに、どのような構造的な問題があるか」を診断した上で、その状態に最も適合する個別理論を選び、貴社の状況に合わせて適用する——これがコンサルティングにおける課題解決の指導です。診断（システム分析）と処方（個別理論の適用）は、常にセットで行われます。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-group-label fade-up"><span class="edge-tick"></span>Ⅳ. 前提 — 机上の空論にしないための制約条件</div>
+      <div class="case-grid fade-up">
+        <div class="case-card">
+          <span class="cno">監査論</span>
+          <h4>「構造」から経営を診る</h4>
+          <p>経営者不正は人格の問題ではなく、「機会」「動機・プレッシャー」「正当化」が揃うことで生じる構造的な現象です。内部統制アプローチからリスク・アプローチへの移行という監査の歴史は、経営者自身の管理体制の捉え方にも示唆を与えます。</p>
+          <div class="theme">不正のトライアングル / 結果責任からプロセス責任へ</div>
+        </div>
+        <div class="case-card">
+          <span class="cno">財務情報</span>
+          <h4>「有用性」と「正確性」</h4>
+          <p>監査が保証するのは情報の正確性であり、有用性は対象外です。財務諸表が金融機関・投資家に「伝えるべきこと」を伝えられているかという情報開示・IRの設計、見えざる資産（Goodwill）の言語化を診断します。</p>
+          <div class="theme">情報開示・IRの設計 / 非財務情報とガバナンス</div>
+        </div>
+        <div class="case-card">
+          <span class="cno">管理会計</span>
+          <h4>意思決定のための情報設計</h4>
+          <p>管理会計は社内向けの自由な「コミュニケーション・ツール」です。「どのような計算式か」ではなく「どんな情報ニーズがあるか」から発想し、原価計算・CVP分析・予算管理・意思決定会計を設計します。</p>
+          <div class="theme">企業＝協働システム（バーナード） / 予算統制への橋渡し</div>
+        </div>
+      </div>
+
+      <div class="fade-up" style="margin-top:32px;">
+        <p class="section-lead" style="max-width:100%;">
+          システム分析やカオス理論に基づく創発の議論は、それ自体が目的化すれば机上の空論に陥ります。私たちの指導は、常に<strong style="color:var(--ink);font-weight:500;">会計・監査・管理会計といった具体的なツールと、貴社が実際に置かれている制約条件（資金、人員、時間）</strong>を踏まえたものであることを前提としています。
+        </p>
+      </div>
+
+      <div class="fade-up" style="margin-top:48px;">
+        <div class="sub-table">
+          <div class="sub-row">
+            <div class="k">対象</div>
+            <div class="v">経営トップ。経営理念・全社戦略の策定支援を含む総合的な助言を提供します。</div>
+          </div>
+          <div class="sub-row">
+            <div class="k">アプローチ</div>
+            <div class="v">①個々の経営理論を実践できるようになること、②それぞれの分析結果を統合して解釈すること——この二段階を目指します。エビデンス（データ）を盲信せず、その背景（コンテクスト）の再現までを目指します。</div>
+          </div>
+          <div class="sub-row">
+            <div class="k">紹介・橋渡し</div>
+            <div class="v">高度に専門的な処置が必要な場合は、提携ネットワークの専門職へ橋渡しします。抱え込みません。</div>
+          </div>
+          <div class="sub-row">
+            <div class="k">責任の考え方</div>
+            <div class="v">結果責任は負いませんが、提案の妥当性に対する「プロセス責任」からは逃げません。</div>
+          </div>
+          <div class="sub-row">
+            <div class="k">対応</div>
+            <div class="v">代表・栗原正樹のみが担当します。緊急性が高い場合は、メンタリングを経ずにコンサルティングのみのご依頼も可能です。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AI事業（チテキウム）— 外部サイトへの誘導 ============ -->
+  <section id="chitekium">
+    <div class="wrap">
+      <div class="section-head fade-up">
+        <div class="eyebrow"><span class="edge-tick"></span>BUSINESS 03 — AI ALIGNMENT</div>
+        <h2>AI事業 チテキウム</h2>
+        <p class="section-lead">
+          AIを単なるツールではなく、人と共生する存在として捉え、企業と人が「AIに何を期待し、どう使うか」を共に考える総合コンサルティング事業です。サービス内容、研修プログラム、代表によるAI論考コラムなど、詳細は専用サイトでご覧いただけます。
+        </p>
+      </div>
+
+      <div class="ext-card fade-up">
+        <div>
+          <div class="label"><span class="edge-tick"></span>CHITEKIUM — AI ALIGNMENT DIV.</div>
+          <h3>知が集まる広場、<br>チテキウムへ。</h3>
+          <p>
+            講演・研修（触）、AI活用コンサルティング（設）、開発パートナーの紹介（結）の三領域と、AI共生時代の人間理解を問う代表コラム「AIの原理と人間理解」全8回を掲載しています。
+          </p>
+        </div>
+        <a href="https://masakiktax-alt.github.io/chitekium/" target="_blank" rel="noopener" class="btn btn-primary">チテキウムを見る <i style="font-size:13px;">↗</i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MEMBERS ============ -->
+  <section id="members" class="alt">
+    <div class="wrap">
+      <div class="section-head fade-up">
+        <div class="eyebrow"><span class="edge-tick"></span>WHO WE ARE</div>
+        <h2>研究者であり、実務家であること。</h2>
+        <p class="section-lead">
+          私たちは専門家である前に、1人の人間として接したいと考えています。お客様と向き合うのではなく、肩を並べて考えたい。心を許して相談してもらうためには、まず人として信用し、私たちを好きになってもらうことが必要です。たわいもない雑談や世間話も重要な潤滑油なのです。
+        </p>
+      </div>
+
+      <div class="members fade-up">
+        <div class="member">
+          <div class="role">代表社員 / REPRESENTATIVE</div>
+          <h3>栗原 正樹</h3>
+          <span class="romaji">MASAKI KURIHARA</span>
+          <p>
+            茨城キリスト教大学経営学部教授。税理士。青山学院大学博士後期課程出身。大手国家資格予備校を経て、監査法人、私立大学経済研究所特別研究員を兼務した後、茨城キリスト教大学に赴任。専門学校での実務教育から、公認会計士・税理士の能力維持研修、JICAと連携した海外政府機関関係者へのレクチャーまで、幅広い場での講義・セミナーを担当してきた。
+          </p>
+          <p>
+            「NHK関東甲信越地方放送番組審議会委員」「中小企業脱炭素経営促進コンソーシアム協議会副座長」「行政経営改革推進会議委員」など、茨城県を中心に複数の有識者会議の委員を務める。大学では「科学哲学」「経営学」「会計学」など幅広い分野の科目を担当。現在の主な研究テーマは「AIと社会システム」「カーボンニュートラルと企業経営」。
+          </p>
+          <div class="keywords">
+            <span>AIと社会システム</span>
+            <span>カーボンニュートラルと企業経営</span>
+            <span>経営学</span>
+            <span>会計学</span>
+            <span>科学哲学</span>
+          </div>
+        </div>
+
+        <div class="member">
+          <div class="role">業務執行役（AI事業） / EXECUTIVE OFFICER</div>
+          <h3>髙橋 瑠依</h3>
+          <span class="romaji">RUI TAKAHASHI</span>
+          <p>
+            AI研修の企画設計・講師。株式会社デジライズ研修講師。茨城キリスト教大学・栗原ゼミ出身。在学中よりスタートアップ企業にてAI関連事業の開発に従事し、SNS運用担当およびAIの実践的な使用に関する研修の企画設計・講師を務め、11万人のアカウントフォロワーを持つAIインフルエンサーとしても活動した。
+          </p>
+          <p>
+            現在は合同会社ProfeSsions Edgeの業務執行役として、AI関連事業（事業ブランド：チテキウム）のうち、特に実務面に関する研修の企画設計および講師を務める。株式会社デジライズでも研修講師を担当し、上場企業をはじめ幅広い法人での研修・講演実績を持つ。企業へのAIの業務実装支援事業にも着手中。
+          </p>
+          <div class="keywords">
+            <span>生成AI活用</span>
+            <span>AI研修・講演</span>
+            <span>SNS運用・情報発信</span>
+            <span>AI業務実装支援</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="alt">
+    <div class="wrap">
+      <div class="section-head fade-up">
+        <div class="eyebrow"><span class="edge-tick"></span>CONTACT</div>
+        <h2>まずは、お話を聞かせてください。</h2>
+        <p class="section-lead">
+          「まだ何も決まっていない」という段階のご相談こそ、私たちの得意分野です。メンタリング・コンサルティングのご相談、講演・研修のご依頼、社外取締役等への就任依頼まで、どの段階のご相談でも歓迎します。
+        </p>
+      </div>
+
+      <div class="contact-wrap fade-up">
+        <div class="contact-info">
+          <h3>合同会社 ProfeSsions Edge</h3>
+          <p>
+            料金は業務内容に応じて個別にご提案いたします。代表・栗原正樹のみが対応いたします。まずはお気軽にお問い合わせください。
+          </p>
+          <div class="info-line"><span class="k">所在地</span><span>〒330-0053 埼玉県さいたま市浦和区前地3-14-12 1階A</span></div>
+          <div class="info-line"><span class="k">代表社員</span><span>栗原 正樹</span></div>
+          <div class="info-line"><span class="k">業務執行役</span><span>髙橋 瑠依（AI事業担当）</span></div>
+          <div class="info-line"><span class="k">AI事業</span><span>チテキウム（AIアライメント事業部）</span></div>
+          <div class="info-line"><span class="k">アクセス</span><span>JR京浜東北線・宇都宮線・高崎線「浦和駅」より徒歩圏内</span></div>
+        </div>
+        <form class="form-stack" onsubmit="event.preventDefault();">
+          <div>
+            <label>お名前<span style="color:var(--brass);"> *</span></label>
+            <input type="text" required>
+          </div>
+          <div>
+            <label>会社名・団体名</label>
+            <input type="text">
+          </div>
+          <div>
+            <label>メールアドレス<span style="color:var(--brass);"> *</span></label>
+            <input type="email" required>
+          </div>
+          <div>
+            <label>ご相談の種類<span style="color:var(--brass);"> *</span></label>
+            <select required>
+              <option value="">選択してください</option>
+              <option>メンタリングのご相談</option>
+              <option>経営コンサルティングのご相談</option>
+              <option>AI活用コンサルティングのご相談</option>
+              <option>講演・研修のご依頼</option>
+              <option>開発パートナー紹介のご相談</option>
+              <option>社外取締役・有識者就任のご相談</option>
+              <option>取材・その他</option>
+            </select>
+          </div>
+          <div>
+            <label>ご相談内容<span style="color:var(--brass);"> *</span></label>
+            <textarea required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="justify-content:center;margin-top:8px;">送信内容を確認する</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="logo">
+          <span class="mark"></span>
+          <span>ProfeSsions Edge<span class="sub">合同会社プロフェッションズエッジ</span></span>
+        </a>
+        <p>教養と科学的経営学を基盤に、経営者の思考そのものを支援する。教育・研修事業、コンサルティング事業、AI事業（チテキウム）の三領域を展開するPSEグループの一翼。</p>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h5>事業内容</h5>
+          <a href="#mentoring">教育・研修 / メンタリング</a>
+          <a href="#consulting">コンサルティング</a>
+          <a href="#chitekium">AI事業 チテキウム</a>
+        </div>
+        <div class="foot-col">
+          <h5>会社情報</h5>
+          <a href="#philosophy">理念・考え方</a>
+          <a href="#members">代表・体制</a>
+        </div>
+        <div class="foot-col">
+          <h5>関連サイト</h5>
+          <a href="https://masakikurihara.com" target="_blank" rel="noopener">栗原正樹 個人ページ <i style="font-size:11px;">↗</i></a>
+          <a href="https://masakiktax-alt.github.io/chitekium/" target="_blank" rel="noopener">チテキウム（AI事業） <i style="font-size:11px;">↗</i></a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 ProfeSsions Edge LLC. All rights reserved.</div>
+      <div>〒330-0053 埼玉県さいたま市浦和区前地3-14-12 1階A — Be a Edge.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
