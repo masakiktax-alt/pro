@@ -5,28 +5,37 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>合同会社ProfeSsions Edge | 教養を、経営の刃に。</title>
 <meta name="description" content="合同会社ProfeSsions Edgeは、教養と科学的経営学を基盤に、経営者の思考そのものを支援するメンタリング・コンサルティング・AI事業を展開しています。">
+<link rel="icon" type="image/png" href="pse_lmark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0E1116;
-    --bg-soft:#141822;
-    --surface:#171C26;
-    --surface-2:#1D2330;
-    --line:#2B313F;
-    --line-soft:#232936;
-    --ink:#E9E6DC;
-    --ink-dim:#A7AEBB;
-    --ink-mute:#6E7686;
-    --brass:#C9A24B;
-    --brass-soft:#9B8051;
-    --brass-glow:rgba(201,162,75,0.12);
+    --bg:#0D090E;
+    --bg-soft:#151017;
+    --surface:#1A121B;
+    --surface-2:#211724;
+    --line:#3A2939;
+    --line-soft:#2D202E;
+    --ink:#F0E8ED;
+    --ink-dim:#B9AEB6;
+    --ink-mute:#81737D;
+    --accent-pink:#EA90B5;
+    --accent-plum:#801C6F;
+    --accent-taupe:#A89C95;
+    --accent-gradient:linear-gradient(135deg,var(--accent-pink),var(--accent-plum));
+    --brass:var(--accent-pink);
+    --brass-soft:var(--accent-taupe);
+    --brass-glow:rgba(234,144,181,0.13);
     --serif:'Shippori Mincho','EB Garamond',serif;
     --sans:'Noto Sans JP','Hiragino Kaku Gothic ProN',sans-serif;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
+  html{
+    scroll-behavior:smooth;
+    overflow-y:scroll;
+    scrollbar-gutter:stable;
+  }
   body{
     background:var(--bg);
     color:var(--ink);
@@ -54,13 +63,13 @@
     position:absolute;
     top:-1px;left:0;
     width:64px;height:3px;
-    background:var(--brass);
+    background:var(--accent-gradient);
     clip-path:polygon(0 0,100% 50%,0 100%);
   }
   .edge-tick{
     display:inline-block;
     width:10px;height:10px;
-    background:var(--brass);
+    background:var(--accent-gradient);
     clip-path:polygon(0 0,100% 50%,0 100%);
     margin-right:14px;
     flex-shrink:0;
@@ -70,9 +79,9 @@
   header{
     position:fixed;top:0;left:0;right:0;
     z-index:100;
-    background:rgba(14,17,22,0.82);
+    background:rgba(255,255,255,0.97);
     backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line-soft);
+    border-bottom:1px solid #E8E1E6;
   }
   .nav{
     max-width:1080px;margin:0 auto;padding:0 32px;
@@ -85,39 +94,73 @@
     letter-spacing:0.12em;
     font-weight:600;
     display:flex;align-items:center;gap:10px;
+    color:#171217;
+    line-height:1.08;
   }
   .logo .mark{
-    width:14px;height:24px;
-    background:var(--brass);
-    clip-path:polygon(0 0,100% 50%,0 100%);
+    width:24px;height:28px;
+    background:url('pse_lmark.png') center/contain no-repeat;
+    clip-path:none;
+    flex-shrink:0;
   }
   .logo .sub{
     font-family:var(--sans);
     font-size:10px;
     font-weight:400;
     letter-spacing:0.2em;
-    color:var(--ink-mute);
+    color:#746B72;
     display:block;
-    margin-top:2px;
+    margin-top:0;
+    line-height:1.15;
   }
   nav.links{display:flex;gap:36px;font-size:13px;letter-spacing:0.08em;}
-  nav.links a{color:var(--ink-dim);transition:color 0.25s;position:relative;padding:4px 0;}
-  nav.links a:hover{color:var(--brass);}
+  nav.links a{color:#4F464D;transition:color 0.25s;position:relative;padding:4px 0;}
+  nav.links a:hover{color:var(--accent-plum);}
   .nav-cta{
     font-size:12px;letter-spacing:0.1em;
-    border:1px solid var(--brass-soft);
-    color:var(--brass);
+    border:1px solid var(--accent-plum);
+    color:var(--accent-plum);
     padding:9px 22px;
     transition:all 0.25s;
   }
-  .nav-cta:hover{background:var(--brass);color:var(--bg);}
-  .menu-btn{display:none;background:none;border:none;color:var(--ink);font-size:24px;cursor:pointer;}
+  .nav-cta:hover{background:var(--accent-plum);color:#fff;border-color:var(--accent-plum);}
+  .menu-btn{display:none;background:none;border:none;color:#171217;font-size:24px;cursor:pointer;}
 
   @media(max-width:860px){
     nav.links{display:none;}
     .nav-cta{display:none;}
     .menu-btn{display:block;}
   }
+
+  /* === Multi-page presentation === */
+  body.page-home{
+    --bg:#000;
+    --bg-soft:#070507;
+    --surface:#100B10;
+    --surface-2:#171018;
+    --line:#302330;
+    --line-soft:#241A24;
+    --brass:#B85AA7;
+    --brass-soft:#801C6F;
+    --brass-glow:rgba(128,28,111,.18);
+    --accent-gradient:linear-gradient(135deg,#A84696,#801C6F);
+    background:#000;
+  }
+  .page-home .hero{background:#000;}
+  .page-home .drucker-block{display:none;}
+  .page-philosophy main>section:not(#philosophy):not(.quote-block):not(.drucker-block){display:none;}
+  .page-mentoring main>section:not(#mentoring){display:none;}
+  .page-consulting main>section:not(#consulting){display:none;}
+  .page-ai main>section:not(#chitekium){display:none;}
+  .page-members main>section:not(#members){display:none;}
+  .page-contact main>section:not(#contact){display:none;}
+  body:not(.page-home) .intro-screen{display:none;}
+  body:not(.page-home).intro-active{overflow-y:auto;}
+  .page-philosophy nav.links a[href="philosophy.html"],
+  .page-mentoring nav.links a[href="mentoring.html"],
+  .page-consulting nav.links a[href="consulting.html"],
+  .page-ai nav.links a[href="ai.html"],
+  .page-members nav.links a[href="members.html"]{color:var(--accent-plum);}
 
   /* === Hero === */
   .hero{
@@ -128,6 +171,7 @@
     position:relative;
     padding:140px 0 80px;
     overflow:hidden;
+    background:radial-gradient(circle at 82% 42%,rgba(128,28,111,.18),transparent 42%);
   }
   .hero::before{
     content:'';
@@ -139,13 +183,127 @@
     opacity:0.5;
     pointer-events:none;
   }
+  .hero>.wrap{position:relative;z-index:1;}
+  .page-home .hero>.wrap{width:100%;}
   .hero-eyebrow{
     font-size:13px;
     letter-spacing:0.35em;
     color:var(--brass);
     font-weight:500;
     margin-bottom:28px;
-    display:flex;align-items:center;
+    display:flex;align-items:center;flex-wrap:wrap;
+  }
+  .liberal-art-trigger{
+    appearance:none;
+    border:0;
+    border-bottom:1px solid rgba(184,90,167,.45);
+    padding:4px 0 3px;
+    background:transparent;
+    color:inherit;
+    font:inherit;
+    letter-spacing:inherit;
+    text-align:left;
+    cursor:pointer;
+    transition:color .25s ease,border-color .25s ease,text-shadow .25s ease;
+    animation:liberal-art-invitation 3.6s ease-in-out infinite;
+  }
+  .liberal-art-trigger:hover,
+  .liberal-art-trigger:focus-visible,
+  .liberal-art-trigger[aria-expanded="true"]{
+    color:#E487D3;
+    border-color:#E487D3;
+    text-shadow:0 0 18px rgba(184,90,167,.45);
+    outline:none;
+  }
+  .liberal-art-popup{
+    position:absolute;
+    z-index:5;
+    top:50%;
+    right:32px;
+    width:min(380px,calc(100% - 670px));
+    min-width:350px;
+    max-height:calc(100vh - 132px);
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    scrollbar-width:thin;
+    scrollbar-color:rgba(184,90,167,.48) transparent;
+    padding:32px 30px 28px;
+    border:1px solid rgba(184,90,167,.48);
+    background:linear-gradient(145deg,rgba(22,12,22,.97),rgba(5,3,6,.98));
+    box-shadow:0 28px 80px rgba(0,0,0,.58),0 0 44px rgba(128,28,111,.12);
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transform:translate(28px,-50%);
+    transition:opacity .35s ease,transform .45s cubic-bezier(.22,1,.36,1),visibility .35s;
+  }
+  .liberal-art-popup.is-auto-preview{
+    transition:opacity 1.2s ease,transform 1.35s cubic-bezier(.22,1,.36,1),visibility 1.2s;
+  }
+  .liberal-art-popup.is-open{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+    transform:translate(0,-50%);
+  }
+  .liberal-art-close{
+    position:absolute;
+    top:13px;
+    right:15px;
+    width:32px;
+    height:32px;
+    border:0;
+    background:transparent;
+    color:var(--ink-mute);
+    font-size:25px;
+    font-weight:200;
+    line-height:1;
+    cursor:pointer;
+    transition:color .2s ease,transform .2s ease;
+  }
+  .liberal-art-close:hover,
+  .liberal-art-close:focus-visible{color:#fff;transform:rotate(90deg);outline:none;}
+  .liberal-art-popup .popup-kicker{
+    margin-bottom:16px;
+    color:var(--brass);
+    font-size:10px;
+    letter-spacing:.32em;
+  }
+  .liberal-art-popup h2,
+  .liberal-art-popup h3{
+    font-family:var(--serif);
+    color:#F4F1E8;
+    font-weight:500;
+    line-height:1.55;
+  }
+  .liberal-art-popup h2{font-size:24px;margin-bottom:12px;}
+  .liberal-art-popup h2 span{color:var(--brass);}
+  .liberal-art-popup h3{font-size:21px;font-style:italic;margin-bottom:12px;}
+  .liberal-art-popup p{
+    color:var(--ink-dim);
+    font-size:13.5px;
+    font-weight:300;
+    line-height:2;
+  }
+  .liberal-art-popup .popup-section p+p{margin-top:12px;}
+  .liberal-art-popup .popup-section+.popup-section{
+    margin-top:25px;
+    padding-top:24px;
+    border-top:1px solid var(--line-soft);
+  }
+  @media(max-width:1050px){
+    .liberal-art-popup{
+      position:fixed;
+      top:50%;
+      left:50%;
+      right:auto;
+      width:min(520px,calc(100vw - 40px));
+      min-width:0;
+      max-height:calc(100vh - 120px);
+      overflow-y:auto;
+      transform:translate(-50%,-46%);
+    }
+    .liberal-art-popup.is-open{transform:translate(-50%,-50%);}
   }
   .hero h1{
     font-family:var(--serif);
@@ -155,6 +313,10 @@
     letter-spacing:0.02em;
     max-width:920px;
     color:#F4F1E8;
+  }
+  .page-home .hero h1{
+    font-size:clamp(30px,4.8vw,57px);
+    max-width:690px;
   }
   .hero h1 em{
     font-style:italic;
@@ -182,8 +344,8 @@
     cursor:pointer;
     font-family:var(--sans);
   }
-  .btn-primary{background:var(--brass);color:#16140C;}
-  .btn-primary:hover{background:#E0BD6E;}
+  .btn-primary{background:var(--accent-gradient);color:#fff;}
+  .btn-primary:hover{filter:brightness(1.1);}
   .btn-ghost{border:1px solid var(--line);color:var(--ink-dim);}
   .btn-ghost:hover{border-color:var(--brass-soft);color:var(--brass);}
 
@@ -196,8 +358,324 @@
   .hero-foot-item{font-size:12px;color:var(--ink-mute);letter-spacing:0.06em;line-height:1.8;}
   .hero-foot-item b{display:block;color:var(--ink-dim);font-size:13px;font-weight:500;margin-bottom:4px;letter-spacing:0.04em;}
 
+  /* === Representative / second viewport === */
+  .representative-page{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding:100px 0 86px;
+    border-top:1px solid var(--line-soft);
+    background:
+      linear-gradient(90deg,rgba(128,28,111,.035),transparent 44%),
+      #050305;
+  }
+  .representative-page>.wrap{width:100%;}
+  .representative-layout{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    min-height:590px;
+    border:1px solid var(--line);
+    background:rgba(5,3,6,.7);
+  }
+  .representative-why{
+    position:relative;
+    padding:52px 56px 48px;
+    overflow:hidden;
+  }
+  .representative-why::after{
+    content:"";
+    position:absolute;
+    right:-120px;
+    bottom:-170px;
+    width:340px;
+    height:340px;
+    border:1px solid rgba(184,90,167,.1);
+    transform:rotate(45deg);
+  }
+  .representative-why .why-label{
+    margin-bottom:18px;
+    color:var(--brass);
+    font-size:10px;
+    letter-spacing:.3em;
+  }
+  .representative-why>*{position:relative;z-index:1;}
+  .representative-why .why-copy{margin-top:0;}
+  .representative-why .why-copy h3{
+    margin-bottom:18px;
+    color:#F4F1E8;
+    font-family:var(--serif);
+    font-size:24px;
+    font-weight:600;
+    line-height:1.5;
+  }
+  .representative-why .why-copy p{
+    margin-bottom:14px;
+    color:var(--ink-dim);
+    font-size:13px;
+    font-weight:300;
+    line-height:1.9;
+  }
+  .representative-why .why-copy .why-lead,
+  .representative-why .why-copy .why-quote{
+    color:#E487D3;
+    font-weight:500;
+  }
+  .representative-why .why-copy .why-quote{
+    padding:2px 0 2px 15px;
+    border-left:1px solid rgba(184,90,167,.65);
+  }
+  .representative-why .why-term{
+    color:#D2A1C9;
+    font-weight:500;
+    text-decoration:underline;
+    text-decoration-color:rgba(184,90,167,.34);
+    text-decoration-thickness:1px;
+    text-underline-offset:3px;
+  }
+  .representative-profile{
+    padding:52px 56px 48px;
+    border-right:1px solid var(--line);
+  }
+  .representative-profile .rep-role{
+    margin-bottom:18px;
+    color:var(--brass);
+    font-size:10px;
+    letter-spacing:.3em;
+  }
+  .representative-profile h2{
+    font-family:var(--serif);
+    color:#F4F1E8;
+    font-size:24px;
+    font-weight:600;
+    line-height:1.4;
+  }
+  .representative-profile .rep-romaji{
+    display:block;
+    margin-top:7px;
+    color:var(--ink-mute);
+    font-size:10px;
+    letter-spacing:.24em;
+  }
+  .representative-profile .rep-title{
+    margin-top:19px;
+    color:var(--ink-dim);
+    font-size:13px;
+    font-weight:300;
+    letter-spacing:.05em;
+  }
+  .representative-profile .rep-group-link{
+    display:inline-flex;
+    align-items:center;
+    gap:4px;
+    margin-top:10px;
+    color:#D2A1C9;
+    font-size:10.5px;
+    font-weight:400;
+    letter-spacing:.035em;
+    border-bottom:1px solid rgba(184,90,167,.34);
+    transition:color .25s ease,border-color .25s ease,text-shadow .25s ease;
+  }
+  .representative-profile .rep-group-link:hover,
+  .representative-profile .rep-group-link:focus-visible{
+    color:#F0B7E5;
+    border-color:#E487D3;
+    text-shadow:0 0 12px rgba(184,90,167,.24);
+    outline:none;
+  }
+  .representative-profile .rep-copy{
+    margin-top:30px;
+    padding-top:25px;
+    border-top:1px solid var(--line-soft);
+  }
+  .representative-profile .rep-copy p{
+    margin-bottom:14px;
+    color:var(--ink-dim);
+    font-size:13px;
+    font-weight:300;
+    line-height:1.9;
+  }
+  .representative-profile .rep-highlight{
+    color:#D2A1C9;
+    font-weight:500;
+    text-decoration:underline;
+    text-decoration-color:rgba(184,90,167,.34);
+    text-decoration-thickness:1px;
+    text-underline-offset:3px;
+  }
+  .representative-profile .rep-keywords{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+  .representative-profile .rep-keywords span{
+    border:1px solid rgba(184,90,167,.5);
+    padding:6px 12px;
+    background:rgba(184,90,167,.09);
+    color:#E487D3;
+    font-size:10.5px;
+    letter-spacing:.06em;
+    box-shadow:inset 0 0 16px rgba(128,28,111,.06);
+  }
+  .representative-profile .rep-research-link{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-top:20px;
+    border:1px solid rgba(184,90,167,.5);
+    padding:9px 15px;
+    background:rgba(184,90,167,.09);
+    color:#E487D3;
+    font-size:11px;
+    letter-spacing:.08em;
+    box-shadow:inset 0 0 16px rgba(128,28,111,.06);
+    transition:color .25s ease,border-color .25s ease,background .25s ease;
+  }
+  .representative-profile .rep-research-link:hover,
+  .representative-profile .rep-research-link:focus-visible{
+    color:#fff;
+    border-color:#E487D3;
+    background:rgba(184,90,167,.18);
+    outline:none;
+  }
+  @media(max-width:900px){
+    .representative-layout{grid-template-columns:1fr;}
+    .representative-why{min-height:270px;border-right:0;padding:42px 36px;}
+    .representative-profile{padding:42px 36px;border-right:0;border-bottom:1px solid var(--line);}
+  }
+  @media(max-width:580px){
+    .representative-page{padding:86px 0 64px;}
+    .representative-profile{padding:36px 24px;}
+    .representative-why{padding:36px 24px;}
+  }
+
+  /* === Business overview / third viewport === */
+  .business-overview{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding:104px 0 92px;
+    overflow:hidden;
+    border-top:1px solid var(--line-soft);
+    background:
+      radial-gradient(circle at 86% 18%,rgba(128,28,111,.14),transparent 34%),
+      linear-gradient(180deg,#070507 0%,#0D080D 100%);
+  }
+  .business-overview>.wrap{width:100%;}
+  .business-overview-head{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:32px;
+    margin-bottom:44px;
+  }
+  .business-overview-head .overview-kicker{
+    margin-bottom:13px;
+    color:var(--brass);
+    font-size:11px;
+    letter-spacing:.34em;
+  }
+  .business-overview-head h2{
+    font-family:var(--serif);
+    font-size:clamp(34px,4.5vw,54px);
+    font-weight:500;
+    line-height:1.25;
+    color:#F4F1E8;
+  }
+  .business-overview-head .overview-note{
+    max-width:330px;
+    padding-bottom:7px;
+    color:var(--ink-mute);
+    font-size:11px;
+    line-height:1.8;
+    letter-spacing:.12em;
+    text-align:right;
+  }
+  .business-map{
+    position:relative;
+    border:1px solid var(--line);
+    background:rgba(4,3,5,.58);
+    box-shadow:0 28px 80px rgba(0,0,0,.22);
+  }
+  .business-map::before{
+    content:"";
+    position:absolute;
+    top:-1px;
+    left:-1px;
+    width:34%;
+    height:2px;
+    background:linear-gradient(90deg,#E487D3,var(--brass),transparent);
+  }
+  .business-map-title{
+    display:grid;
+    grid-template-columns:150px minmax(280px,1.15fr) minmax(260px,1fr);
+    min-height:54px;
+    align-items:center;
+    border-bottom:1px solid var(--line);
+    color:var(--ink-mute);
+    font-size:10px;
+    letter-spacing:.26em;
+  }
+  .business-map-title span{padding:0 28px;}
+  .business-map-title span:nth-child(2),
+  .business-map-title span:nth-child(3){border-left:1px solid var(--line-soft);}
+  .business-row{
+    display:grid;
+    grid-template-columns:150px minmax(280px,1.15fr) minmax(260px,1fr);
+    min-height:112px;
+    border-bottom:1px solid var(--line-soft);
+    transition:background .3s ease;
+  }
+  .business-row:last-child{border-bottom:0;}
+  .business-row:hover{background:rgba(184,90,167,.055);}
+  .business-row>div{
+    display:flex;
+    align-items:center;
+    padding:24px 28px;
+  }
+  .business-row>div+div{border-left:1px solid var(--line-soft);}
+  .business-level{
+    color:var(--brass);
+    font-size:12px;
+    line-height:1.7;
+    letter-spacing:.12em;
+  }
+  .business-name{
+    gap:20px;
+    font-family:var(--serif);
+    color:#F4F1E8;
+    font-size:clamp(20px,2.1vw,27px);
+    font-weight:500;
+    letter-spacing:.03em;
+  }
+  .business-name .business-no{
+    color:var(--brass-soft);
+    font-family:var(--sans);
+    font-size:10px;
+    letter-spacing:.18em;
+  }
+  .business-purpose{
+    color:var(--ink-dim);
+    font-size:15px;
+    font-weight:300;
+    line-height:1.9;
+    letter-spacing:.06em;
+  }
+  .business-row.is-ai .business-name{color:#E487D3;}
+  .business-row.is-other .business-level{color:var(--ink-mute);}
+  @media(max-width:760px){
+    .business-overview{padding:88px 0 72px;}
+    .business-overview-head{display:block;margin-bottom:30px;}
+    .business-overview-head .overview-note{margin-top:14px;text-align:left;}
+    .business-map-title{display:none;}
+    .business-row{grid-template-columns:1fr;min-height:0;padding:24px 24px 26px;gap:10px;}
+    .business-row>div{padding:0;}
+    .business-row>div+div{border-left:0;}
+    .business-level{min-height:20px;font-size:10px;}
+    .business-level:empty{display:none;}
+    .business-name{font-size:22px;}
+    .business-purpose{font-size:14px;padding-left:38px!important;}
+    .business-purpose:empty{display:none;}
+  }
+
   /* === Section generic === */
   section{padding:120px 0;position:relative;}
+  section[id]{scroll-margin-top:72px;}
   .section-head{margin-bottom:64px;max-width:760px;}
   .eyebrow{
     font-size:12px;letter-spacing:0.32em;color:var(--brass);
@@ -458,6 +936,7 @@
 
   /* === People / Members === */
   .members{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
+  .members.members-single{grid-template-columns:minmax(0,760px);justify-content:end;}
   .member{border:1px solid var(--line-soft);padding:40px;}
   .member .role{
     font-size:11px;letter-spacing:0.24em;color:var(--brass);margin-bottom:18px;
@@ -470,6 +949,35 @@
   .member .keywords{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
   .member .keywords span{font-size:11px;color:var(--ink-mute);border:1px solid var(--line);padding:5px 12px;}
   @media(max-width:780px){.members{grid-template-columns:1fr;}}
+  .ai-intro-grid{
+    display:grid;
+    grid-template-columns:minmax(0,.92fr) minmax(0,1fr);
+    gap:0;
+    align-items:start;
+    margin-bottom:56px;
+  }
+.ai-intro-grid .section-head{max-width:none;margin-bottom:0;}
+.ai-intro-copy{padding-right:40px;}
+.ai-intro-grid .section-lead,
+.ai-intro-grid .member p,
+.ai-intro-copy .ext-card p{
+  font-size:14px;
+  line-height:2;
+}
+.ai-intro-copy .ext-card{
+  margin-top:36px;
+  grid-template-columns:1fr;
+  gap:28px;
+  padding:0;
+  border:none;
+}
+.ai-intro-copy .ai-site-link{margin-top:24px;}
+.ai-intro-grid .members-single{grid-template-columns:1fr;}
+  .ai-intro-grid .member{padding:32px;}
+  @media(max-width:900px){
+    .ai-intro-grid{grid-template-columns:1fr;gap:36px;}
+    .ai-intro-copy{padding-right:0;}
+  }
 
   /* === Network / group structure === */
   .group-diagram{
@@ -559,7 +1067,7 @@
     padding:64px 0 40px;
   }
   .foot-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:40px;}
-  .foot-brand .logo{margin-bottom:16px;}
+  .foot-brand .logo{margin-bottom:16px;color:var(--ink);}
   .foot-brand p{font-size:12.5px;color:var(--ink-mute);line-height:1.9;max-width:320px;font-weight:300;}
   .foot-links{display:flex;gap:48px;flex-wrap:wrap;}
   .foot-col h5{font-size:11px;letter-spacing:0.2em;color:var(--brass-soft);margin-bottom:18px;}
@@ -570,6 +1078,8 @@
     display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;
     font-size:11.5px;color:var(--ink-mute);letter-spacing:0.06em;
   }
+  footer.footer-bottom-only{padding:0 0 28px;}
+  .footer-bottom-only .foot-bottom{margin-top:0;}
 
   /* === Case library === */
   .case-grid{
@@ -604,13 +1114,175 @@
   }
   @media(max-width:860px){.case-grid{grid-template-columns:repeat(2,1fr);}}
   @media(max-width:540px){.case-grid{grid-template-columns:1fr;}}
+  .case-grid.special-grid{grid-template-columns:repeat(2,1fr);}
+  @media(max-width:540px){.case-grid.special-grid{grid-template-columns:1fr;}}
+
+  .training-info-grid{
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    border:1px solid var(--line-soft);
+  }
+  .training-info-panel{padding:38px 40px;}
+  .training-info-panel + .training-info-panel{border-left:1px solid var(--line-soft);}
+  .training-info-label{
+    margin-bottom:22px;
+    color:var(--accent);
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.14em;
+  }
+  .training-domain-list{margin:0;padding:0;list-style:none;}
+  .training-domain-list li{
+    padding:14px 0;
+    border-bottom:1px solid var(--line-soft);
+    color:var(--text);
+    line-height:1.8;
+  }
+  .training-domain-list li:first-child{padding-top:0;}
+  .training-domain-list li:last-child{padding-bottom:0;border-bottom:0;}
+  .training-domain-list strong{color:var(--white);font-weight:600;}
+  .training-fee-copy{margin:0;color:var(--text);line-height:2;}
+  .training-fee-copy + .training-fee-copy{margin-top:18px;}
+  @media(max-width:760px){
+    .training-info-grid{grid-template-columns:1fr;}
+    .training-info-panel{padding:30px 24px;}
+    .training-info-panel + .training-info-panel{border-left:0;border-top:1px solid var(--line-soft);}
+  }
 
   .case-group-label{
-    font-size:11px;letter-spacing:0.3em;color:var(--brass);
+    font-size:14px;letter-spacing:0.3em;color:var(--brass);
     margin:56px 0 18px;
     display:flex;align-items:center;
   }
+  .case-group-label.diagnosis-label{font-size:14px;}
+  .case-group-label.method-label{font-size:14px;}
   .case-group-label:first-of-type{margin-top:0;}
+
+  /* === Collapsible curriculum details === */
+  .curriculum-details{
+    margin-top:40px;
+    border-top:1px solid var(--line-soft);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .curriculum-details summary{
+    list-style:none;
+    cursor:pointer;
+    padding:22px 0;
+    color:var(--brass);
+    font-size:14px;
+    letter-spacing:0.08em;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .curriculum-details summary::-webkit-details-marker{display:none;}
+  .curriculum-details summary::after{
+    content:'＋';
+    color:var(--ink-dim);
+    font-size:18px;
+  }
+  .curriculum-details[open] summary::after{content:'−';}
+  .curriculum-details[open]{padding-bottom:24px;}
+  .sub-emphasis{color:var(--ink);font-weight:600;}
+  .curriculum-group{
+    border:1px solid var(--line-soft);
+    margin-top:20px;
+    background:rgba(255,255,255,.01);
+  }
+  .curriculum-group>summary{
+    list-style:none;
+    cursor:pointer;
+    padding:18px 22px;
+    color:var(--brass);
+    font-size:14px;
+    letter-spacing:.08em;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .curriculum-group>summary::-webkit-details-marker{display:none;}
+  .curriculum-group>summary::after{content:'＋';font-size:17px;color:var(--ink-dim);}
+  .curriculum-group[open]>summary::after{content:'−';}
+  .curriculum-group-content{padding:0 22px 24px;}
+  .curriculum-group-close{
+    display:none;
+    position:fixed;
+    z-index:38;
+    right:clamp(18px,2.4vw,34px);
+    bottom:clamp(92px,calc(3vw + 72px),110px);
+    width:54px;
+    height:54px;
+    border:1px solid rgba(184,90,167,.65);
+    background:rgba(5,3,6,.9);
+    color:#fff;
+    font-size:22px;
+    line-height:1;
+    cursor:pointer;
+    box-shadow:0 0 22px rgba(184,90,167,.15);
+    transition:border-color .25s,box-shadow .25s,transform .25s;
+  }
+  .curriculum-group[open]>.curriculum-group-close{display:block;}
+  .curriculum-group-close:hover,
+  .curriculum-group-close:focus-visible{
+    border-color:var(--brass);
+    box-shadow:0 0 28px rgba(184,90,167,.32);
+    transform:translateY(-2px);
+    outline:none;
+  }
+  @media(max-width:640px){.curriculum-group-close{right:14px;bottom:78px;width:48px;height:48px;}}
+  .method-more{
+    display:inline-block;
+    margin-left:0;
+    border:0;
+    border-bottom:1px solid var(--brass);
+    background:transparent;
+    color:var(--ink);
+    font:inherit;
+    cursor:pointer;
+  }
+  .consulting-note-link-wrap{text-align:right;margin-top:14px;}
+  .method-dialog{
+    position:fixed;
+    z-index:45;
+    top:50%;
+    right:32px;
+    width:min(380px,calc(100vw - 64px));
+    max-height:calc(100vh - 132px);
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    scrollbar-width:thin;
+    border:1px solid rgba(184,90,167,.48);
+    background:linear-gradient(145deg,rgba(22,12,22,.97),rgba(5,3,6,.98));
+    color:var(--ink);
+    box-shadow:0 28px 80px rgba(0,0,0,.58),0 0 44px rgba(128,28,111,.12);
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transform:translate(28px,-50%);
+    transition:opacity .35s ease,transform .45s cubic-bezier(.22,1,.36,1),visibility .35s;
+  }
+  .method-dialog.is-open{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+    transform:translate(0,-50%);
+  }
+  .method-dialog-inner{position:relative;padding:32px 30px 28px;}
+  .method-dialog .popup-kicker{margin-bottom:16px;color:var(--brass);font-size:10px;letter-spacing:.32em;}
+  .method-dialog h3{font-family:var(--serif);font-size:24px;font-weight:500;line-height:1.55;margin-bottom:14px;color:#F4F1E8;}
+  .method-dialog h3 span{color:var(--brass);}
+  .method-dialog p{color:var(--ink-dim);font-size:13.5px;font-weight:300;line-height:2;}
+  .method-dialog-close{
+    position:absolute;top:13px;right:15px;width:32px;height:32px;padding:0;border:0;background:transparent;
+    color:var(--ink-mute);font-size:25px;font-weight:200;line-height:1;cursor:pointer;
+    transition:color .2s ease,transform .2s ease;
+  }
+  .method-dialog-close:hover,.method-dialog-close:focus-visible{color:#fff;transform:rotate(90deg);outline:none;}
+  @media(max-width:1050px){
+    .method-dialog{left:50%;right:auto;width:min(520px,calc(100vw - 40px));transform:translate(-50%,-46%);}
+    .method-dialog.is-open{transform:translate(-50%,-50%);}
+  }
+  @media(max-width:600px){.method-dialog-inner{padding:38px 24px 28px;}}
 
   /* === Mentoring theme rows === */
   .theme-block{
@@ -662,9 +1334,343 @@
   /* fade-in */
   .fade-up{opacity:0;transform:translateY(28px);transition:opacity 0.8s ease, transform 0.8s ease;}
   .fade-up.visible{opacity:1;transform:translateY(0);}
+
+  /* === Page scroll controls === */
+  .page-scroll-status{
+    --scroll-progress:0;
+    position:fixed;
+    z-index:32;
+    left:50%;
+    bottom:18px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+    transform:translateX(-50%);
+    color:rgba(255,255,255,.5);
+    border:0;
+    padding:8px 18px;
+    background:transparent;
+    font-family:var(--sans);
+    cursor:pointer;
+    mix-blend-mode:difference;
+    transition:color .3s ease,text-shadow .3s ease;
+  }
+  .page-scroll-status:hover,
+  .page-scroll-status:focus-visible{
+    color:#fff;
+    text-shadow:0 0 12px rgba(255,255,255,.75);
+    outline:none;
+  }
+  .page-scroll-status.is-hidden{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+  }
+  .page-scroll-status .scroll-label{
+    font-size:9px;
+    line-height:1;
+    letter-spacing:.28em;
+    writing-mode:horizontal-tb;
+  }
+  .page-scroll-status .scroll-track{
+    position:relative;
+    display:block;
+    width:1px;
+    height:48px;
+    overflow:hidden;
+    background:rgba(255,255,255,.2);
+  }
+  .page-scroll-status .scroll-progress{
+    position:absolute;
+    inset:0;
+    background:#fff;
+    box-shadow:0 0 8px rgba(255,255,255,.5);
+    transform:scaleY(var(--scroll-progress));
+    transform-origin:top;
+    transition:transform .12s linear;
+  }
+  .back-to-top{
+    position:fixed;
+    z-index:36;
+    right:clamp(18px,2.4vw,34px);
+    bottom:clamp(18px,3vw,34px);
+    width:62px;
+    height:62px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:4px;
+    border:1px solid rgba(184,90,167,.55);
+    background:rgba(5,3,6,.86);
+    color:rgba(255,255,255,.72);
+    font-family:var(--sans);
+    font-size:9px;
+    letter-spacing:.2em;
+    cursor:pointer;
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transform:translateY(12px);
+    transition:opacity .35s ease,transform .35s ease,visibility .35s,border-color .25s ease,color .25s ease,box-shadow .25s ease;
+  }
+  .back-to-top .top-arrow{font-size:18px;line-height:1;letter-spacing:0;}
+  .back-to-top.is-visible{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0);}
+  .back-to-top:hover,
+  .back-to-top:focus-visible{
+    color:#fff;
+    border-color:#E487D3;
+    box-shadow:0 0 24px rgba(184,90,167,.25);
+    outline:none;
+  }
+  @media(max-width:640px){
+    .page-scroll-status{bottom:10px;}
+    .page-scroll-status .scroll-track{height:38px;}
+    .back-to-top{right:14px;bottom:14px;width:54px;height:54px;}
+  }
+
+  /* === Opening: cinematic iaido cut === */
+  body.intro-active{overflow:hidden;}
+  .intro-screen{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    overflow:hidden;
+    background:transparent;
+    cursor:pointer;
+    animation:intro-screen-away 0.01s linear 7.15s forwards;
+  }
+  .intro-panel{
+    position:absolute;
+    inset:0;
+    background:#000;
+    will-change:transform;
+  }
+  .intro-panel.top{
+    clip-path:polygon(0 0,100% 0,100% 49%,0 51%);
+    animation:intro-open-top .94s cubic-bezier(.76,0,.24,1) 6.08s forwards;
+  }
+  .intro-panel.bottom{
+    clip-path:polygon(0 51%,100% 49%,100% 100%,0 100%);
+    animation:intro-open-bottom .94s cubic-bezier(.76,0,.24,1) 6.08s forwards;
+  }
+  .intro-quote{
+    position:absolute;
+    z-index:4;
+    top:50%;
+    left:50%;
+    width:min(88vw,820px);
+    transform:translate(-50%,-50%);
+    text-align:center;
+    color:#fff;
+    opacity:0;
+    animation:intro-quote-sequence 2.15s ease 1s forwards;
+  }
+  .intro-quote-en{
+    font-family:'EB Garamond',var(--serif);
+    font-size:clamp(30px,4.8vw,58px);
+    font-style:italic;
+    font-weight:400;
+    line-height:1.25;
+    letter-spacing:.025em;
+  }
+  .intro-quote-author{
+    margin-top:20px;
+    font-family:var(--sans);
+    font-size:clamp(10px,1.2vw,13px);
+    font-weight:400;
+    letter-spacing:.22em;
+    color:rgba(255,255,255,.68);
+  }
+  .intro-title{
+    position:absolute;
+    z-index:4;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    color:#fff;
+    font-family:var(--serif);
+    font-size:clamp(28px,4.2vw,54px);
+    font-weight:500;
+    font-style:normal;
+    line-height:1;
+    letter-spacing:.12em;
+    white-space:nowrap;
+    opacity:0;
+    text-shadow:0 0 18px rgba(255,255,255,.08);
+  }
+  .intro-title.top-half{
+    clip-path:polygon(0 0,100% 0,100% 50%,0 58%);
+    animation:
+      intro-title-appear 1.7s cubic-bezier(.22,.7,.2,1) 3s forwards,
+      intro-title-cut-top .8s cubic-bezier(.2,.7,.2,1) 5.12s forwards;
+  }
+  .intro-title.bottom-half{
+    clip-path:polygon(0 58%,100% 50%,100% 100%,0 100%);
+    animation:
+      intro-title-appear 1.7s cubic-bezier(.22,.7,.2,1) 3s forwards,
+      intro-title-cut-bottom .8s cubic-bezier(.2,.7,.2,1) 5.12s forwards;
+  }
+  .intro-slash{
+    position:absolute;
+    z-index:5;
+    top:calc(50% + 5px);
+    left:50%;
+    width:112vw;
+    height:1px;
+    transform:translate(-50%,-50%) rotate(-1.15deg);
+    background:linear-gradient(90deg,
+      rgba(255,255,255,.2) 0%,
+      #fff 18%,
+      #fff 82%,
+      rgba(255,255,255,.2) 100%);
+    box-shadow:0 0 3px #fff,0 0 12px rgba(234,144,181,.42);
+    opacity:0;
+    animation:
+      intro-slash-draw .14s cubic-bezier(.12,.7,.18,1) 4.95s forwards,
+      intro-slash-fade .32s ease 5.16s forwards;
+  }
+  .intro-glint{
+    position:absolute;
+    z-index:6;
+    top:calc(50% + 5px);
+    left:-5%;
+    width:58px;
+    height:2px;
+    transform:translateY(-50%) rotate(-1.15deg) skewX(-30deg);
+    background:linear-gradient(90deg,transparent,#fff 58%,transparent);
+    box-shadow:0 0 8px rgba(255,255,255,.9);
+    opacity:0;
+    animation:intro-glint-run .16s linear 4.94s forwards;
+  }
+  .intro-skip{
+    position:absolute;
+    z-index:8;
+    right:clamp(24px,4vw,64px);
+    bottom:clamp(28px,5vh,54px);
+    border:0;
+    padding:10px 2px 19px;
+    background:transparent;
+    color:rgba(255,255,255,.48);
+    font-family:var(--sans);
+    font-size:11px;
+    font-weight:400;
+    line-height:1;
+    letter-spacing:.32em;
+    cursor:pointer;
+    opacity:0;
+    text-shadow:0 0 0 rgba(255,255,255,0);
+    animation:
+      intro-skip-appear .8s ease .65s forwards,
+      intro-skip-glow 3.4s ease-in-out 1.45s infinite;
+  }
+  .intro-skip::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:0;
+    width:44px;
+    height:1px;
+    background:rgba(255,255,255,.25);
+    transform:translateX(-50%);
+    box-shadow:0 0 0 rgba(255,255,255,0);
+    animation:intro-skip-line 3.4s ease-in-out 1.45s infinite;
+  }
+  .intro-skip:hover,
+  .intro-skip:focus-visible{
+    color:#fff;
+    text-shadow:0 0 9px rgba(255,255,255,.9),0 0 24px rgba(255,255,255,.42);
+    outline:none;
+  }
+  @keyframes liberal-art-invitation{
+    0%,100%{filter:brightness(1);text-shadow:0 0 0 rgba(255,255,255,0);}
+    50%{filter:brightness(1.38);text-shadow:0 0 7px rgba(255,255,255,.58),0 0 19px rgba(255,255,255,.24);}
+  }
+  @keyframes intro-skip-appear{
+    from{opacity:0;transform:translateY(5px);}
+    to{opacity:.55;transform:translateY(0);}
+  }
+  @keyframes intro-skip-glow{
+    0%,100%{opacity:.45;color:rgba(255,255,255,.48);text-shadow:0 0 0 rgba(255,255,255,0);}
+    50%{opacity:1;color:#fff;text-shadow:0 0 8px rgba(255,255,255,.82),0 0 25px rgba(255,255,255,.38);}
+  }
+  @keyframes intro-skip-line{
+    0%,100%{background:rgba(255,255,255,.22);box-shadow:0 0 0 rgba(255,255,255,0);transform:translateX(-50%) scaleX(.72);}
+    50%{background:rgba(255,255,255,.8);box-shadow:0 0 9px rgba(255,255,255,.56);transform:translateX(-50%) scaleX(1);}
+  }
+  @keyframes intro-quote-sequence{
+    0%{opacity:0;filter:blur(8px);transform:translate(-50%,calc(-50% + 8px)) scale(.988);}
+    32%{opacity:1;filter:blur(0);transform:translate(-50%,-50%) scale(1);}
+    70%{opacity:1;filter:blur(0);transform:translate(-50%,-50%) scale(1);}
+    100%{opacity:0;filter:blur(2px);transform:translate(-50%,calc(-50% - 3px)) scale(1.004);}
+  }
+  @keyframes intro-title-appear{
+    0%{opacity:0;filter:blur(7px);transform:translate(-50%,calc(-50% + 7px)) scale(.985);}
+    75%{opacity:.9;filter:blur(.5px);transform:translate(-50%,-50%) scale(.998);}
+    100%{opacity:1;filter:blur(0);transform:translate(-50%,-50%) scale(1);}
+  }
+  @keyframes intro-title-cut-top{
+    0%{opacity:1;filter:blur(0);transform:translate(-50%,-50%);}
+    18%{opacity:1;filter:blur(0);transform:translate(calc(-50% - 9px),calc(-50% - 1px));}
+    78%{opacity:1;filter:blur(0);transform:translate(calc(-50% - 9px),calc(-50% - 1px));}
+    100%{opacity:0;filter:blur(1px);transform:translate(calc(-50% - 14px),calc(-50% - 4px));}
+  }
+  @keyframes intro-title-cut-bottom{
+    0%{opacity:1;filter:blur(0);transform:translate(-50%,-50%);}
+    18%{opacity:1;filter:blur(0);transform:translate(calc(-50% + 9px),calc(-50% + 1px));}
+    78%{opacity:1;filter:blur(0);transform:translate(calc(-50% + 9px),calc(-50% + 1px));}
+    100%{opacity:0;filter:blur(1px);transform:translate(calc(-50% + 14px),calc(-50% + 4px));}
+  }
+  @keyframes intro-slash-draw{
+    0%{clip-path:inset(0 100% 0 0);opacity:0;}
+    8%{opacity:1;}
+    100%{clip-path:inset(0 0 0 0);opacity:1;}
+  }
+  @keyframes intro-glint-run{
+    0%{left:-5%;opacity:0;}
+    16%{opacity:1;}
+    84%{opacity:1;}
+    100%{left:103%;opacity:0;}
+  }
+  @keyframes intro-slash-fade{
+    to{opacity:0;filter:blur(1px);}
+  }
+  @keyframes intro-open-top{
+    0%{transform:translateY(0);}
+    100%{transform:translateY(-102%);}
+  }
+  @keyframes intro-open-bottom{
+    0%{transform:translateY(0);}
+    100%{transform:translateY(102%);}
+  }
+  @keyframes intro-screen-away{
+    to{visibility:hidden;pointer-events:none;background:transparent;}
+  }
+  @media(prefers-reduced-motion:reduce){
+    body.intro-active{overflow-x:hidden;overflow-y:auto;}
+    .intro-screen{display:none;}
+    .liberal-art-trigger{animation:none;}
+    .liberal-art-popup.is-auto-preview{transition:none;}
+    .page-scroll-status .scroll-progress,.back-to-top{transition:none;}
+  }
 </style>
 </head>
-<body>
+<body class="intro-active page-home">
+
+<div class="intro-screen" id="introScreen" role="dialog" aria-modal="true" aria-label="オープニング" title="クリックでスキップ">
+  <div class="intro-panel top"></div>
+  <div class="intro-panel bottom"></div>
+  <div class="intro-quote">
+    <div class="intro-quote-en">“Management is a liberal art.”</div>
+    <div class="intro-quote-author">Peter F. Drucker</div>
+  </div>
+  <div class="intro-title top-half">経営に教養という刃をー</div>
+  <div class="intro-title bottom-half">経営に教養という刃をー</div>
+  <div class="intro-slash"></div>
+  <div class="intro-glint"></div>
+  <button type="button" class="intro-skip" aria-label="オープニングをスキップ">SKIP</button>
+</div>
 
 <header>
   <div class="nav">
@@ -676,35 +1682,84 @@
       </span>
     </a>
     <nav class="links">
-      <a href="#philosophy">理念</a>
+      <a href="#representative">コンセプト</a>
       <a href="#mentoring">メンタリング</a>
       <a href="#consulting">コンサルティング</a>
       <a href="#chitekium">AI事業</a>
-      <a href="#members">代表・体制</a>
+      <a href="#training">研修・講演</a>
     </nav>
     <a href="#contact" class="nav-cta">お問い合わせ</a>
   </div>
 </header>
+
+<button type="button" class="page-scroll-status" id="pageScrollStatus" aria-label="次のセクションへ進む">
+  <span class="scroll-label">SCROLL</span>
+  <span class="scroll-track"><span class="scroll-progress"></span></span>
+</button>
+<button type="button" class="back-to-top" id="backToTop" aria-label="ページのトップに戻る">
+  <span class="top-arrow">↑</span><span>TOP</span>
+</button>
 
 <main id="top">
 
   <!-- ============ HERO ============ -->
   <section class="hero">
     <div class="wrap">
-      <div class="hero-eyebrow"><span class="edge-tick"></span>PROFESSIONS EDGE LLC — THINK WITH CLIENT</div>
-      <h1>教養という<em>刃</em>を、<br>経営の意思決定に。</h1>
+      <div class="hero-eyebrow"><span class="edge-tick"></span>PROFESSIONS EDGE LLC —&nbsp;<button type="button" class="liberal-art-trigger" id="liberalArtTrigger" aria-expanded="false" aria-controls="liberalArtPopup">MANAGEMENT IS A LIBERAL ART.</button></div>
+        <h1>理念が経営を<br><em>ドライブ</em>する。</h1>
       <p class="hero-lead">
-        合同会社ProfeSsions Edgeは、経営者自身の「思考の前提」を扱うメンタリング、経営学という社会科学に基づく科学的コンサルティング、そしてAIと人間の共生を設計するAIアライメント事業の三領域を通じて、経営者が自らの理念を生み出し、実現するための土台を共に築きます。
+      経営者の想いを引き出し、育て、形にするメンタリング。<br>
+      企業理念へと昇華した想いを実現させるコンサルティング。<br>
+      合同会社ProfeSsions Edgeは、経営者が自らの理念を生み出し、<br>その理念を経営の力へと変えていくための土台を共に築きます。
       </p>
       <div class="hero-actions">
-        <a href="#philosophy" class="btn btn-primary">私たちの考え方を読む</a>
-        <a href="#contact" class="btn btn-ghost">ご相談はこちら</a>
+        <a href="#representative" class="btn btn-primary">経営者のための「パーソナルMBA」ー事業コンセプトへ</a>
       </div>
-      <div class="hero-foot">
-        <div class="hero-foot-item"><b>代表社員</b>栗原 正樹 / 茨城キリスト教大学経営学部教授・経営学者</div>
-        <div class="hero-foot-item"><b>事業構成</b>教育・研修事業（メンタリング） / コンサルティング事業（トップコンサルティング） / AI事業（チテキウム）</div>
-        <div class="hero-foot-item"><b>対象</b>中小企業の経営者・次期経営者・経営者団体・教育機関</div>
-        <div class="hero-foot-item"><b>提供形式</b>ケースメソッドによる個別指導 / 継続的な対話契約 / トップコンサルティング</div>
+      <aside class="liberal-art-popup" id="liberalArtPopup" role="dialog" aria-modal="false" aria-hidden="true" aria-label="教養と経営について">
+        <button type="button" class="liberal-art-close" id="liberalArtClose" aria-label="解説を閉じる">×</button>
+        <div class="popup-kicker">OUR POINT OF VIEW</div>
+        <div class="popup-section">
+          <h2>教養とは<span>「思考の軸」</span></h2>
+          <p>「liberal art」の直訳は自由技芸、つまり「自由に考えるための学問」です。日本ではこれを「教養」と訳しました。</p>
+          <p>教養とは「他者に依存せず、自分自身を置かれた環境や状況の中で適切に位置付け、自ら考え決定するための思考の軸」です。</p>
+        </div>
+        <div class="popup-section">
+          <h3>Management is a liberal art</h3>
+          <p>経営とは、人間・社会・価値・責任を扱う営みです。だからこそ経営者は、単なる管理技術者では足りません。人間と社会を理解し、自分自身を律し、判断し、成果に結びつける教養を持たなければならない——私たちは、この言葉を事業のすべての出発点としています。</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ REPRESENTATIVE ============ -->
+  <section id="representative" class="representative-page">
+    <div class="wrap">
+      <div class="representative-layout fade-up">
+        <div class="representative-profile">
+          <div class="rep-role">代表者 / REPRESENTATIVE</div>
+          <h2>栗原 正樹</h2>
+          <span class="rep-romaji">MASAKI KURIHARA</span>
+          <p class="rep-title">茨城キリスト教大学経営学部教授・税理士</p>
+          <a class="rep-group-link" href="https://www.pse-ac.com/" target="_blank" rel="noopener noreferrer">PSE ACCOUNTING FIRM 統括代表 <span aria-hidden="true">↗</span></a>
+          <div class="rep-copy">
+            <p>茨城キリスト教大学経営学部教授。税理士。青山学院大学博士後期課程出身。大手国家資格予備校を経て、監査法人勤務と私立大学経済研究所の特別研究員を兼務した後、茨城キリスト教大学に赴任。専門学校での実務教育から、<strong class="rep-highlight">公認会計士・税理士の能力維持研修、JICAと連携した海外政府機関関係者へのレクチャーまで、幅広い場での講義・セミナーを担当</strong>してきた。</p>
+            <p>「NHK関東甲信越地方放送番組審議会委員」「中小企業脱炭素経営促進コンソーシアム協議会副座長」「行政経営改革推進会議委員」など、茨城県を中心に複数の有識者会議の委員を務める。大学では「科学哲学」「経営学」「会計学」など幅広い分野の科目を担当。現在の主な研究テーマは「AIと社会システム」「カーボンニュートラルと企業経営」。</p>
+            <a class="rep-research-link" href="https://masakikurihara.com/" target="_blank" rel="noopener noreferrer">公式研究者サイト <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="representative-why">
+          <div class="why-label"><span class="edge-tick"></span>WHY / 事業コンセプト</div>
+          <div class="why-copy">
+            <h3>パーソナルMBA<br>真の経営を学べる場所を創りたい</h3>
+            <p class="why-lead">「試験に受かるための知識」はあっても、「経営を推し進めるための知恵」がない。</p>
+            <p>税理士予備校の講師を務めていた頃、私が抱いていたのは、そんな強い違和感でした。得点力を伸ばすテクニックと、複雑な現実に対峙する経営の実践は、全く別物だったのです。</p>
+            <p>本物の経営を学びたい——その一心で足を踏み入れた会計専門職大学院（会計×MBA）で私が目にしたのは、<strong class="why-term">世界的なキャリアを持つプロ経営者が実践する「科学と実務」を融合した「真の経営の姿」</strong>でした。その時受けた衝撃を、私は一生忘れることはありません。</p>
+            <p>ですが、誰もが大学院に通える時間や環境にあるわけではありません。</p>
+            <p class="why-quote">「時間のない経営者が、本質の経営を学び、思考力を研ぎ澄ませる場所を作りたい。」</p>
+            <p>私のその切実な想いから生まれたのが、この<strong class="why-term">「経営者特化型メンタリングプログラム」</strong>です。</p>
+            <p>講義を聞くだけでは到達できない、対話を通じた思考の深化。あなたの原点と向き合い、自らの経営をドライブさせるための伴走が、ここにあります。</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -725,60 +1780,6 @@
     </div>
   </section>
 
-  <!-- ============ PHILOSOPHY ============ -->
-  <section id="philosophy" class="alt">
-    <div class="wrap">
-      <div class="section-head fade-up">
-        <div class="eyebrow"><span class="edge-tick"></span>OUR PHILOSOPHY</div>
-        <h2>利益は手段である。<br>目的は、経営者の中にしかない。</h2>
-        <p class="section-lead">
-          企業経営の真の目的は、事業を通じて経営者の想いや夢を実現することです。そしてその想いや夢は社会の中にこそあるものです。利益もキャッシュ・フローも、そのための手段にすぎません。経営学は「どのように経営すべきか」を教えてくれますが、「経営の結果として何をしたいのか」は、経営者自身の中にしかありません。私たちは、その想いを実現するために、クライアントと共に歩み続けます。
-        </p>
-      </div>
-
-      <div class="philo-grid fade-up">
-        <div class="philo-cell">
-          <span class="num">Ⅰ</span>
-          <h3>結果は約束しない。<br>提案の根拠に、責任を持つ。</h3>
-          <p>
-            コンサルタントは、結果に対して責任を取ることができません。結果は様々な要因が複雑に絡み合って決まるものであり、予期せぬ成功があるように、予期せぬ失敗もあるからです。私たちが負うのは「結果責任」ではなく、提案の妥当性に対する責任である「プロセス責任」です。この責任から、決して逃げません。
-          </p>
-        </div>
-        <div class="philo-cell">
-          <span class="num">Ⅱ</span>
-          <h3>経営学は、企業経営の<br>取扱説明書である。</h3>
-          <p>
-            私たちのコンサルティングは、個人的な経験談に基づくものではありません。経営学という社会科学——過去の経営行動を分析し、成功・失敗の要因をパターン化した知見の集積——を前提とした、仮説と検証に基づく科学的なコンサルティングです。
-          </p>
-        </div>
-        <div class="philo-cell">
-          <span class="num">Ⅲ</span>
-          <h3>データではなく、<br>背景（コンテクスト）を読む。</h3>
-          <p>
-            私たちは「エビデンスベースドマネジメント」を盲信しません。本当に重要なのは、データそのものではなく、なぜそのような結果が生まれたのかという背景の理解です。私たちは、その背景を踏まえた「コンテクストベースドマネジメント」を実践します。
-          </p>
-        </div>
-        <div class="philo-cell">
-          <span class="num">Ⅳ</span>
-          <h3>教養とは、自分で<br>決めるための思考の軸。</h3>
-          <p>
-            教養とは「他者に依存せず、自分自身を置かれた環境や状況の中で適切に位置付け、自ら考え決定するための思考の軸」です。経営判断の質は、手法の知識量ではなく、その手法を選択する根拠となる無意識の価値観によって決まります。
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ QUOTE ============ -->
-  <section class="quote-block">
-    <div class="wrap">
-      <blockquote class="fade-up">
-        理念を<em>実現する</em>前に、<br>理念を<em>生み出す力</em>を。
-      </blockquote>
-      <cite>THINK WITH CLIENT — 栗原 正樹</cite>
-    </div>
-  </section>
-
   <!-- ============ MENTORING (heavy content) ============ -->
   <section id="mentoring">
     <div class="wrap">
@@ -786,11 +1787,37 @@
         <div class="eyebrow"><span class="edge-tick"></span>BUSINESS 01 — MENTORING</div>
         <h2>理念を生み出す力を育てる、<br>思考のOSのアップデート。</h2>
         <p class="section-lead">
-          コンサルティングが「経営者の理念を実現するための相談」であるのに対し、メンタリングは、その理念そのものを生み出す土台——経営者自身の<strong style="color:var(--ink);font-weight:500;">思考の前提（思考のOS）</strong>を扱います。経営判断の質は、手法の知識量ではなく、その手法を選択する根拠となっている無意識の価値観によって決まるからです。教養とは、他者に依存せず、置かれた環境の中で自ら考え決定するための思考の軸であり、自己決定の度合いは人生の精神的満足度そのものに直結します。
+          メンタリングでは、経営者自身の<strong style="color:var(--ink);font-weight:500;">思考の前提（思考のOS）</strong>を対話とケースメソッドによって見直します。目指すのは、流行の手法を覚えることではなく、自社の理念や状況に照らして「何を、なぜ選ぶのか」を自分の言葉で説明できるようになることです。
         </p>
       </div>
 
-      <div class="case-group-label fade-up"><span class="edge-tick"></span>準備編 — 経営学ケーススタディ（コンサルティングで用いる12のケース）</div>
+      <div class="fade-up" style="margin-top:48px;">
+        <div class="sub-table">
+          <div class="sub-row">
+            <div class="k">プログラム構成</div>
+            <div class="v">経営学ケーススタディと、哲学・社会科学を土台とする<span class="sub-emphasis">ケース・講義の二段階構成</span>です。どのコンテンツを受講すべきか、初回の面談時に決定します。<span class="sub-emphasis">1回90分を指導単位</span>とし、何回でコンテンツを消化するかも打ち合わせによって決定します。プログラム終了後は、ご希望に応じてコンサルティングの顧問契約に移行します。</div>
+          </div>
+          <div class="sub-row">
+            <div class="k">費用及び実施</div>
+            <div class="v">「1か月に1回90分のメンタリングの実施（原則としてオンライン）」を基本とします。この場合の金額は<span class="sub-emphasis">月額100,000円（税抜）</span>です。個別メンタリングが基本ですが、<span class="sub-emphasis">この料金内で4名まで参加が可能です。</span>4名を超える場合は、相談の上、金額を調整します。</div>
+          </div>
+          <div class="sub-row">
+            <div class="k">対象</div>
+            <div class="v">経営者。次期経営者、経営幹部など、経営に携わることが予定される方。集団開催にも対応します。</div>
+          </div>
+          <div class="sub-row">
+            <div class="k">対応</div>
+            <div class="v"><span class="sub-emphasis">代表である栗原が直接担当します。</span></div>
+          </div>
+        </div>
+      </div>
+
+      <details class="curriculum-details fade-up">
+        <summary>カリキュラムの詳細を見る（経営学12ケース・哲学／社会科学6テーマ）</summary>
+      <details class="curriculum-group">
+        <summary>準備編 — 経営学ケーススタディ（コンサルティングで用いる12のケース）</summary>
+        <button type="button" class="curriculum-group-close" aria-label="準備編を閉じる" onclick="const group=this.closest('details');group.open=false;group.querySelector('summary').focus();">−</button>
+        <div class="curriculum-group-content">
 
       <div class="theme-block fade-up">
         <div class="theme-block-inner">
@@ -815,7 +1842,7 @@
         <div class="case-card">
           <span class="cno">Case 01</span>
           <h4>科学的コンサルティングとは</h4>
-          <p>経営とは「目的達成のために、目的から逆算し現在を管理するように行動すること」。コンサルタントは結果責任を負わないが、提案の妥当性に対するプロセス責任を負う、という関係の出発点を定義します。</p>
+          <p>経営とは「目的達成に向けて、目的から逆算し、現在を管理すること」。コンサルタントは結果責任を負わない一方、提案の妥当性に対するプロセス責任を負う、という関係の出発点を定義します。</p>
           <div class="theme">経営の定義 / プロセス責任 / コンテクストベースドマネジメント</div>
         </div>
         <div class="case-card">
@@ -898,7 +1925,13 @@
         </div>
       </div>
 
-      <div class="case-group-label fade-up" style="margin-top:56px;"><span class="edge-tick"></span>思考のOS — 哲学・社会科学を土台とする問い</div>
+        </div>
+      </details>
+
+      <details class="curriculum-group">
+        <summary>思考のOS — 哲学・社会科学を土台とする6つの問い</summary>
+        <button type="button" class="curriculum-group-close" aria-label="思考のOSを閉じる" onclick="const group=this.closest('details');group.open=false;group.querySelector('summary').focus();">−</button>
+        <div class="curriculum-group-content">
 
 
       <div class="theme-block fade-up">
@@ -964,7 +1997,7 @@
           </div>
           <div class="theme-main">
             <p>
-              人間は、プロスペクト理論にあるように、期待よりも損失を過大評価し、確率的に考えれば採用すべき選択を、未熟な直感によって否決してしまいます。脳は思考のエネルギーを節約するために、無意識下で「思考のショートカット＝直観」に頼るようにできているからです。
+              人間は、プロスペクト理論にあるように、期待よりも損失を過大評価し、確率的に考えれば採用すべき選択を、未熟な直感によって否決してしまいます。脳は思考のエネルギーを節約するために、無意識下で「思考のショートカット＝直感」に頼るようにできているからです。
             </p>
             <p>
               自らの未熟な直感に従わず、論理に基づいた判断をするためには、意識的な訓練が必要です。情報が不足し、不確実性の高い状況において、何を根拠に、どこまで踏み込んで判断するか。この「直感と論理の往復」を、実際の経営判断の場面に即して鍛えていきます。
@@ -982,7 +2015,7 @@
           </div>
           <div class="theme-main">
             <p>
-              私たちは資本主義や民主主義という社会の仕組みの中で生きていますが、その成立ちや原理を理解する機会はほとんどありません。ゲームのキャラクターが、プレイするゲームの世界の成立ちを理解しないままプレイすれば、高い成果を得ることは難しい——これは私たちの社会にもそのまま当てはまります。
+              私たちは資本主義や民主主義という社会の仕組みの中で生きていますが、その成り立ちや原理を理解する機会はほとんどありません。ゲームのキャラクターが、プレイするゲームの世界の成り立ちを理解しないままプレイすれば、高い成果を得ることは難しい——これは私たちの社会にもそのまま当てはまります。
             </p>
             <p>
               経済（資本主義・社会主義という運営方法とその功罪）、政治（民主主義と独裁制における社会目的の設定）、法（規範・慣習法・ハイコンテクスト社会とローコンテクスト社会）という社会の構成原理を総論的に整理し、経営判断の背景にある「社会という舞台の設定」そのものへの理解を深めます。
@@ -1003,32 +2036,16 @@
               AIの進歩は、これまで希少だった「道具を使う側の能力（指示を出す力）」の価値を急速に失わせています。AIや機械は「どのようにやるか」と「具体的に実行する」を担えますが、本質的に「なぜやるのか」を考え、その判断に責任を負う能力を持ちません。
             </p>
             <p>
-              AI共生時代における人間の役割とは、<strong>判断と責任をとる役割</strong>であり、その思考軸こそが教養です。教養は、確証バイアスのように都合よく世界を認識してしまう私たちの認識そのものを変え、認識が変われば見える世界が変わります。メンタリングは、この「真実の目」を育てるプロセスです。
+              AI共生時代における人間の役割とは、<strong>判断し、責任を負うこと</strong>であり、その思考軸こそが教養です。教養は、確証バイアスのように都合よく世界を認識してしまう私たちの認識そのものを変え、認識が変われば見える世界が変わります。メンタリングは、この「真実の目」を育てるプロセスです。
             </p>
           </div>
         </div>
       </div>
 
-      <div class="fade-up" style="margin-top:48px;">
-        <div class="sub-table">
-          <div class="sub-row">
-            <div class="k">プログラム構成</div>
-            <div class="v">準備編（経営学ケーススタディ）→ 哲学・社会科学編（思考のOS）という2段階構成。ケースメソッドを用いた60分の指導（複数回）と対話で構成される基本プログラムです。修了後は、継続的な対話契約に移行します。</div>
-          </div>
-          <div class="sub-row">
-            <div class="k">実施形態</div>
-            <div class="v"><strong>個別メンタリング</strong>を基本としますが、ご希望により<strong>複数人での集団開催</strong>も可能です。経営幹部チームや後継者候補同士でケースを議論する形式は、組織内の思考の前提を揃える機会としても有効です。</div>
-          </div>
-          <div class="sub-row">
-            <div class="k">対象</div>
-            <div class="v">経営者本人。次期経営者・後継者、経営幹部のご相談・集団開催にも対応します。</div>
-          </div>
-          <div class="sub-row">
-            <div class="k">対応</div>
-            <div class="v">代表・栗原正樹のみが担当します。</div>
-          </div>
         </div>
-      </div>
+      </details>
+
+      </details>
     </div>
   </section>
 
@@ -1037,106 +2054,9 @@
     <div class="wrap">
       <div class="section-head fade-up">
         <div class="eyebrow"><span class="edge-tick"></span>BUSINESS 02 — TOP CONSULTING</div>
-        <h2>経営学という、<br>企業経営の取扱説明書。</h2>
+        <h2>経営学という先人の叡智。<br>企業経営の取扱説明書。</h2>
         <p class="section-lead">
-          私たちが提供するコンサルティングは、<strong style="color:var(--ink);font-weight:500;">トップコンサルティング</strong>です。これは経営者個人とその意思決定そのものを対象とする総合的な助言であり、特定分野に特化した個別コンサルティングとは異なります。クライアントが「してほしいこと」をそのまま聞くのではなく、経営理念やあるべき姿に照らして「本当にすべきこと」を特定するヒアリングから始まります。経営企画室のような社内機能を持たない中小企業にこそ、この支援が必要だと考えています。
-        </p>
-        <p class="section-lead">
-          経営学には様々な学派がありますが、弊社は<strong style="color:var(--ink);font-weight:500;">制度派経済学</strong>の流れを汲み、ピーター・ドラッカーの経営思想と同系です。利益そのものは目的ではなく、経営者が達成したい目的を実現するためのクリアすべき制約条件と考えます。
-        </p>
-        <p class="section-lead">
-          経営学は、過去の経営行動を分析し、成功・失敗の要因をパターン化した社会科学です。目的を定めることが出来れば、それを実現するためのツールとして、経営学は非常に優秀な道具です。私たちのコンサルティングは、個人的な経験談ではなく、この経営学の理論体系を前提とした、仮説と検証に基づく科学的なコンサルティングです。重要なのは、データそのものではなく、なぜそのような結果が生まれたのかという背景（コンテクスト）を読み解く、<strong style="color:var(--ink);font-weight:500;">コンテクストベースドマネジメント</strong>の実践です。
-        </p>
-        <p class="section-lead">
-          さらに代表の栗原は、監査法人での経験や税理士としての実務経験も豊富であり、単に大学で会計学・監査論・経営学を担当する研究者としてだけでなく、実務家×研究者としてのハイブリッドかつ総合的な専門性を併せ持ちます。<strong style="color:var(--ink);font-weight:500;">社会学を応用したシステム分析</strong>に基づき、理念から数値計画・管理体制まで一貫した支援を提供します。
-        </p>
-      </div>
-
-      <div class="case-group-label fade-up"><span class="edge-tick"></span>Ⅰ. 診断の視座 — 「何が起きているか」ではなく「なぜ起きているか」</div>
-      <div class="theme-block fade-up">
-        <div class="theme-block-inner">
-          <div class="theme-side">
-            <span class="tno">視座 1</span>
-            <h4>対症療法と、<br>メカニズムの修正</h4>
-            <span class="ten">SYMPTOM vs. MECHANISM</span>
-          </div>
-          <div class="theme-main">
-            <p>
-              経営者へのヒアリングは、「今、何が起きているか」という現象の確認から始まりますが、コンサルティングの本体は、その<strong>背景にあるメカニズム——「なぜ起きているか」——の分析</strong>にあります。現象そのものへの対応（対症療法）は当然必要ですが、それだけでは同じ問題が形を変えて再発します。
-            </p>
-            <p>
-              メカニズムの分析結果に応じて、必要があれば、組織や仕組みそのものを組み替える<strong>リストラクチャリング（構造の再設計）</strong>を指導します。逆に、構造そのものに問題がなく、現象が一時的・偶発的なものであれば、構造に手を入れず対症療法のみで十分な場合もあります。「何でも組み替える」のではなく、構造を変えるべき場面と、変えるべきでない場面を見極めることが診断の核心です。
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="case-group-label fade-up"><span class="edge-tick"></span>Ⅱ. 手法 — 社会学を応用したシステム分析</div>
-      <div class="theme-block fade-up">
-        <div class="theme-block-inner">
-          <div class="theme-side">
-            <span class="tno">視座 2</span>
-            <h4>安定化のアドバイスも、<br>変化のアドバイスも</h4>
-            <span class="ten">STABILITY &amp; CHANGE</span>
-          </div>
-          <div class="theme-main">
-            <p>
-              この診断の手法は、<strong>社会学を応用したシステム分析</strong>です。企業という組織を一つの社会システムとして捉え、その時々の段階に応じて、組織を「安定化させる」アドバイスも、「変化させる」アドバイスも行います。
-            </p>
-            <p>
-              安定化が必要な局面では、パーソンズの<strong>AGIL図式</strong>（目標達成・適応・統合・潜在的パターンの維持）やマートンの機能主義のように、組織が秩序を保ち、各部分が全体の維持にどう機能しているかという「伝統的なシステム」の視点から、まとまりを保つ仕組みを診断します。一方、変化が必要な局面では、<strong>カオス理論に基づく創発の誘発</strong>や、複雑システムの制御という視点から、新しいパターンが生まれる余地をどう作るか、試行錯誤をどう組織的に支えるかを設計します。
-            </p>
-            <p>
-              重要なのは、この二つの視点が対立するものではなく、<strong>企業の段階によって使い分けるべき道具</strong>であるということです。安定を求める時期に変化を煽れば組織は崩れ、変化が必要な時期に安定だけを求めれば衰退します。
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="case-group-label fade-up"><span class="edge-tick"></span>Ⅲ. 処方 — ケースで学んだ理論を、処方箋として用いる</div>
-      <div class="theme-block fade-up">
-        <div class="theme-block-inner">
-          <div class="theme-side">
-            <span class="tno">視座 3</span>
-            <h4>個別理論という、<br>処方箋</h4>
-            <span class="ten">THEORIES AS PRESCRIPTIONS</span>
-          </div>
-          <div class="theme-main">
-            <p>
-              準備編のケースメソッドで扱う経営理念とパーパス、競争戦略、モチベーション、内部統制、創発戦略といった個別の経営理論は、汎用的な「共通言語」であると同時に、システム分析の結果に対応する<strong>具体的な処方箋</strong>として機能します。
-            </p>
-            <p>
-              システム分析によって「どこに、どのような構造的な問題があるか」を診断した上で、その状態に最も適合する個別理論を選び、貴社の状況に合わせて適用する——これがコンサルティングにおける課題解決の指導です。診断（システム分析）と処方（個別理論の適用）は、常にセットで行われます。
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="case-group-label fade-up"><span class="edge-tick"></span>Ⅳ. 前提 — 机上の空論にしないための制約条件</div>
-      <div class="case-grid fade-up">
-        <div class="case-card">
-          <span class="cno">監査論</span>
-          <h4>「構造」から経営を診る</h4>
-          <p>経営者不正は人格の問題ではなく、「機会」「動機・プレッシャー」「正当化」が揃うことで生じる構造的な現象です。内部統制アプローチからリスク・アプローチへの移行という監査の歴史は、経営者自身の管理体制の捉え方にも示唆を与えます。</p>
-          <div class="theme">不正のトライアングル / 結果責任からプロセス責任へ</div>
-        </div>
-        <div class="case-card">
-          <span class="cno">財務情報</span>
-          <h4>「有用性」と「正確性」</h4>
-          <p>監査が保証するのは情報の正確性であり、有用性は対象外です。財務諸表が金融機関・投資家に「伝えるべきこと」を伝えられているかという情報開示・IRの設計、見えざる資産（Goodwill）の言語化を診断します。</p>
-          <div class="theme">情報開示・IRの設計 / 非財務情報とガバナンス</div>
-        </div>
-        <div class="case-card">
-          <span class="cno">管理会計</span>
-          <h4>意思決定のための情報設計</h4>
-          <p>管理会計は社内向けの自由な「コミュニケーション・ツール」です。「どのような計算式か」ではなく「どんな情報ニーズがあるか」から発想し、原価計算・CVP分析・予算管理・意思決定会計を設計します。</p>
-          <div class="theme">企業＝協働システム（バーナード） / 予算統制への橋渡し</div>
-        </div>
-      </div>
-
-      <div class="fade-up" style="margin-top:32px;">
-        <p class="section-lead" style="max-width:100%;">
-          システム分析やカオス理論に基づく創発の議論は、それ自体が目的化すれば机上の空論に陥ります。私たちの指導は、常に<strong style="color:var(--ink);font-weight:500;">会計・監査・管理会計といった具体的なツールと、貴社が実際に置かれている制約条件（資金、人員、時間）</strong>を踏まえたものであることを前提としています。
+          私たちが提供する<strong style="color:var(--ink);font-weight:500;">トップコンサルティング</strong>は、経営者の意思決定を支える総合的な助言です。経営企画機能を社内に持たない中小企業を主な対象に、ご要望を起点としながら、理念やあるべき姿に照らして優先課題を共に見極めます。
         </p>
       </div>
 
@@ -1144,93 +2064,149 @@
         <div class="sub-table">
           <div class="sub-row">
             <div class="k">対象</div>
-            <div class="v">経営トップ。経営理念・全社戦略の策定支援を含む総合的な助言を提供します。</div>
+            <div class="v"><span class="sub-emphasis">意思決定をする立場にある経営トップ</span>。経営理念・全社戦略の策定支援を含む総合的な助言を提供します。</div>
           </div>
           <div class="sub-row">
-            <div class="k">アプローチ</div>
-            <div class="v">①個々の経営理論を実践できるようになること、②それぞれの分析結果を統合して解釈すること——この二段階を目指します。エビデンス（データ）を盲信せず、その背景（コンテクスト）の再現までを目指します。</div>
+            <div class="k">ご相談例</div>
+            <div class="v"><span class="sub-emphasis">理念や全社戦略を言語化したい</span>／<span class="sub-emphasis">経営判断を相談できる相手がいない</span>／組織が拡大し管理体制を見直したい／財務情報を意思決定に生かしたい。</div>
           </div>
           <div class="sub-row">
-            <div class="k">紹介・橋渡し</div>
-            <div class="v">高度に専門的な処置が必要な場合は、提携ネットワークの専門職へ橋渡しします。抱え込みません。</div>
+            <div class="k">費用</div>
+            <div class="v"><span class="sub-emphasis">顧問契約を基本</span>とします。基本単価は<span class="sub-emphasis">月額50,000円（税抜）</span>です。面談希望の頻度や具体的な作業の伴うプロジェクト立案など、依頼内容によって、月額の調整やスポット料金が発生します。なお、ご希望に応じて、顧問契約のないスポット依頼もお受けしています。<span class="sub-emphasis">定期的な取締役会への参加をご希望の場合には、社外取締役としてのご依頼も承っております。</span> <button type="button" class="method-more" id="consultingNoticeTrigger" aria-expanded="false" aria-controls="consultingNoticeDialog">注意事項</button></div>
           </div>
           <div class="sub-row">
             <div class="k">責任の考え方</div>
-            <div class="v">結果責任は負いませんが、提案の妥当性に対する「プロセス責任」からは逃げません。</div>
+            <div class="v">経営の結果は、社内外のさまざまな要因によって変わります。私たちは、成果を保証することはできませんが、だからこそ、<button type="button" class="method-more" id="consultingMethodTrigger" aria-expanded="false" aria-controls="consultingMethodDialog">科学的な理論に基づく提案</button>の質を保証します。</div>
           </div>
           <div class="sub-row">
             <div class="k">対応</div>
-            <div class="v">代表・栗原正樹のみが担当します。緊急性が高い場合は、メンタリングを経ずにコンサルティングのみのご依頼も可能です。</div>
+            <div class="v"><span class="sub-emphasis">代表である栗原正樹が担当します。</span></div>
           </div>
         </div>
       </div>
+      <aside class="method-dialog" id="consultingMethodDialog" role="dialog" aria-modal="false" aria-hidden="true" aria-labelledby="consultingMethodTitle">
+        <div class="method-dialog-inner">
+          <button type="button" class="method-dialog-close" aria-label="閉じる">×</button>
+          <div class="popup-kicker">OUR APPROACH</div>
+          <h3 id="consultingMethodTitle">科学的<span>コンサルティング</span></h3>
+          <p>私たちのコンサルティングは、個人的な経験談に基づくものではありません。経営学という社会科学——過去の経営行動を分析し、成功・失敗の要因をパターン化した知見の集積——を前提とした、仮説と検証に基づく科学的なコンサルティングです。</p>
+        </div>
+      </aside>
+      <aside class="method-dialog" id="consultingNoticeDialog" role="dialog" aria-modal="false" aria-hidden="true" aria-labelledby="consultingNoticeTitle">
+        <div class="method-dialog-inner">
+          <button type="button" class="method-dialog-close" aria-label="閉じる">×</button>
+          <div class="popup-kicker">IMPORTANT NOTE</div>
+          <h3 id="consultingNoticeTitle">注意<span>事項</span></h3>
+          <p>トップコンサルティングは、「目的実現のために何をすれば良いか」、「どの専門家をどう使えば良いか」という実行方法の提案を行う業務です。経営トップの参謀としての役割だとご理解ください。</p>
+        </div>
+      </aside>
+
+      <details class="curriculum-group consulting-group fade-up">
+      <summary>Ⅰ. 診断 — 「何が起きているか」ではなく「なぜ起きているか」</summary>
+      <button type="button" class="curriculum-group-close" aria-label="診断を閉じる" onclick="const group=this.closest('details');group.open=false;group.querySelector('summary').focus();">−</button>
+      <div class="curriculum-group-content">
+      <div class="theme-block fade-up">
+        <div class="theme-block-inner">
+          <div class="theme-side">
+            <h4>診断</h4>
+          </div>
+          <div class="theme-main">
+            <p>
+              経営者へのヒアリングは、「今、何が起きているか」という現象の確認から始まりますが、コンサルティングの本体は、その<strong>背景にあるメカニズム——「なぜ起きているか」——の分析</strong>にあります。現象そのものへの対応（対症療法）は当然必要ですが、それだけでは同じ問題が形を変えて再発します。
+            </p>
+            <p>
+              分析結果に応じて、組織や仕組みの再設計を検討します。一方、問題が一時的・偶発的であれば、構造に手を入れず個別対応にとどめます。変えるべきものと、維持すべきものを見極めることが診断の核心です。
+            </p>
+          </div>
+        </div>
+      </div>
+      </div>
+      </details>
+
+      <details class="curriculum-group consulting-group fade-up">
+      <summary>Ⅱ. 手法 — 社会学を応用したシステム分析</summary>
+      <button type="button" class="curriculum-group-close" aria-label="手法を閉じる" onclick="const group=this.closest('details');group.open=false;group.querySelector('summary').focus();">−</button>
+      <div class="curriculum-group-content">
+      <div class="theme-block fade-up">
+        <div class="theme-block-inner">
+          <div class="theme-side">
+            <h4>手法</h4>
+          </div>
+          <div class="theme-main">
+            <p>
+              この診断の手法は、<strong>社会学を応用したシステム分析</strong>です。企業という組織を一つの社会システムとして捉え、その時々の段階に応じて、組織を「安定化させる」アドバイスも、「変化させる」アドバイスも行います。
+            </p>
+            <p>
+              安定化が必要な局面では、役割・権限・情報経路を整え、組織が継続的に機能する仕組みを診断します。一方、変化が必要な局面では、小さな実験と学習を繰り返せる環境をつくり、新しい行動や事業が生まれる余地を設計します。
+            </p>
+            <p>
+              重要なのは、この二つの視点が対立するものではなく、<strong>企業の段階によって使い分けるべき道具</strong>であるということです。安定を求める時期に変化を煽れば組織は崩れ、変化が必要な時期に安定だけを求めれば衰退します。
+            </p>
+          </div>
+        </div>
+      </div>
+      </div>
+      </details>
+
+      <details class="curriculum-group consulting-group fade-up">
+      <summary>Ⅲ. 処方 — ケースで学んだ理論を、処方箋として用いる</summary>
+      <button type="button" class="curriculum-group-close" aria-label="処方を閉じる" onclick="const group=this.closest('details');group.open=false;group.querySelector('summary').focus();">−</button>
+      <div class="curriculum-group-content">
+      <div class="theme-block fade-up">
+        <div class="theme-block-inner">
+          <div class="theme-side">
+            <h4>処方箋</h4>
+          </div>
+          <div class="theme-main">
+            <p>
+              準備編のケースメソッドで扱う経営理念とパーパス、競争戦略、モチベーション、内部統制、創発戦略といった個別の経営理論は、汎用的な「共通言語」であると同時に、システム分析の結果に対応する<strong>具体的な処方箋</strong>として機能します。
+            </p>
+            <p>
+              「どこに、どのような構造的な問題があるか」を診断した上で、適合する理論や手法を選び、貴社の状況に合わせて適用します。診断と解決策の設計を、常にセットで行います。
+            </p>
+          </div>
+        </div>
+      </div>
+      </div>
+      </details>
+
     </div>
   </section>
 
   <!-- ============ AI事業（チテキウム）— 外部サイトへの誘導 ============ -->
   <section id="chitekium">
     <div class="wrap">
+      <div class="ai-intro-grid">
+      <div class="ai-intro-copy">
       <div class="section-head fade-up">
         <div class="eyebrow"><span class="edge-tick"></span>BUSINESS 03 — AI ALIGNMENT</div>
         <h2>AI事業 チテキウム</h2>
         <p class="section-lead">
-          AIを単なるツールではなく、人と共生する存在として捉え、企業と人が「AIに何を期待し、どう使うか」を共に考える総合コンサルティング事業です。サービス内容、研修プログラム、代表によるAI論考コラムなど、詳細は専用サイトでご覧いただけます。
+          チテキウムは、生成AIの研修と業務活用支援を通じて、企業がAIを安全かつ実践的に使うための判断軸を整える事業です。導入そのものを目的にせず、<span class="sub-emphasis">「何をAIに任せ、何を人が判断するか」</span>から共に設計します。サービス内容や研修プログラムの詳細は専用サイトでご覧いただけます。
         </p>
+        <a href="https://www.chitekium.com" target="_blank" rel="noopener" class="btn btn-primary ai-site-link">チテキウムを見る <i style="font-size:13px;">↗</i></a>
       </div>
 
       <div class="ext-card fade-up">
         <div>
           <div class="label"><span class="edge-tick"></span>CHITEKIUM — AI ALIGNMENT DIV.</div>
-          <h3>知が集まる広場、<br>チテキウムへ。</h3>
           <p>
-            講演・研修（触）、AI活用コンサルティング（設）、開発パートナーの紹介（結）の三領域の事業を展開。また、代表によるAI共生時代の人間理解を問う代表コラム「AIの原理と人間理解」全8回を掲載しています。
+            講演・研修（触）、AI活用コンサルティング（設）、開発パートナーの紹介（結）の三領域の事業を展開。また、代表がAI共生時代の人間理解を問うコラム「AIの原理と人間理解」全8回を掲載しています。
           </p>
         </div>
-        <a href="https://www.chitekium.com" target="_blank" rel="noopener" class="btn btn-primary">チテキウムを見る <i style="font-size:13px;">↗</i></a>
       </div>
-    </div>
-  </section>
-
-  <!-- ============ MEMBERS ============ -->
-  <section id="members" class="alt">
-    <div class="wrap">
-      <div class="section-head fade-up">
-        <div class="eyebrow"><span class="edge-tick"></span>WHO WE ARE</div>
-        <h2>研究者であり、実務家であること。</h2>
-        <p class="section-lead">
-          私たちは専門家である前に、1人の人間として接したいと考えています。お客様と向き合うのではなく、肩を並べて考えたい。心を許して相談してもらうためには、まず人として信用し、私たちを好きになってもらうことが必要です。たわいもない雑談や世間話も重要な潤滑油なのです。
-        </p>
       </div>
 
-      <div class="members fade-up">
-        <div class="member">
-          <div class="role">代表社員 / REPRESENTATIVE</div>
-          <h3>栗原 正樹</h3>
-          <span class="romaji">MASAKI KURIHARA</span>
-          <p>
-            茨城キリスト教大学経営学部教授。税理士。青山学院大学博士後期課程出身。大手国家資格予備校を経て、監査法人、私立大学経済研究所特別研究員を兼務した後、茨城キリスト教大学に赴任。専門学校での実務教育から、公認会計士・税理士の能力維持研修、JICAと連携した海外政府機関関係者へのレクチャーまで、幅広い場での講義・セミナーを担当してきた。
-          </p>
-          <p>
-            「NHK関東甲信越地方放送番組審議会委員」「中小企業脱炭素経営促進コンソーシアム協議会副座長」「行政経営改革推進会議委員」など、茨城県を中心に複数の有識者会議の委員を務める。大学では「科学哲学」「経営学」「会計学」など幅広い分野の科目を担当。現在の主な研究テーマは「AIと社会システム」「カーボンニュートラルと企業経営」。
-          </p>
-          <div class="keywords">
-            <span>AIと社会システム</span>
-            <span>カーボンニュートラルと企業経営</span>
-            <span>経営学</span>
-            <span>会計学</span>
-            <span>科学哲学</span>
-          </div>
-        </div>
-
+      <div class="members members-single fade-up">
         <div class="member">
           <div class="role">業務執行役（AI事業） / EXECUTIVE OFFICER</div>
           <h3>髙橋 瑠依</h3>
           <span class="romaji">RUI TAKAHASHI</span>
           <p>
-            AI研修の企画設計・講師。株式会社デジライズ研修講師。茨城キリスト教大学・栗原ゼミ出身。在学中よりスタートアップ企業にてAI関連事業の開発に従事し、SNS運用担当およびAIの実践的な使用に関する研修の企画設計・講師を務め、11万人のアカウントフォロワーを持つAIインフルエンサーとしても活動した。
+            <span class="sub-emphasis">AI研修の企画設計・講師</span>。株式会社デジライズ研修講師。茨城キリスト教大学・栗原ゼミ出身。在学中よりスタートアップ企業にてAI関連事業の開発に従事し、SNS運用担当およびAIの実践的な使用に関する研修の企画設計・講師を務め、<span class="sub-emphasis">SNSで11万人のフォロワーを持つAIインフルエンサー</span>としても活動した。
           </p>
           <p>
-            現在は合同会社ProfeSsions Edgeの業務執行役として、AI関連事業（事業ブランド：チテキウム）のうち、特に実務面に関する研修の企画設計および講師を務める。株式会社デジライズでも研修講師を担当し、上場企業をはじめ幅広い法人での研修・講演実績を持つ。企業へのAIの業務実装支援事業にも着手中。
+            現在はチテキウムにおいて、<span class="sub-emphasis">特に実務面に関する研修の企画設計および講師</span>を務める。株式会社デジライズでも研修講師を担当し、<span class="sub-emphasis">上場企業をはじめ幅広い法人での研修・講演実績</span>を持つ。
           </p>
           <div class="keywords">
             <span>生成AI活用</span>
@@ -1238,6 +2214,40 @@
             <span>SNS運用・情報発信</span>
             <span>AI業務実装支援</span>
           </div>
+        </div>
+      </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ BUSINESS 04: 研修事業の一例 ============ -->
+  <section id="training" class="alt">
+    <div class="wrap">
+      <div class="section-head fade-up">
+        <div class="eyebrow"><span class="edge-tick"></span>BUSINESS 04 — TRAINING</div>
+        <h2>延べ1万数千人を指導してきた実績</h2>
+        <p class="section-lead">
+          企業様が抱える多様な課題に合わせ、単発での研修や講演プログラムをご提供しております。<br><br>
+          学生から上場企業の経営者・専門職、さらにはJICA（国際協力機構）と連携した海外政府機関まで。<span class="sub-emphasis">延べ1万数千人を指導してきた代表・栗原</span>の豊富な実績を活かし、<span class="sub-emphasis">圧倒的な「企画力」と「品質」</span>で、貴社の課題解決に直結する実践的な学びの場を設計いたします。
+        </p>
+      </div>
+
+      <div class="training-info-grid fade-up">
+        <div class="training-info-panel">
+          <div class="training-info-label">対応可能な領域</div>
+          <ul class="training-domain-list">
+            <li><strong>会計分野</strong>（財務会計・管理会計）</li>
+            <li><strong>経営全般</strong>（経営戦略・組織論・モチベーション向上）</li>
+            <li><strong>意識改革</strong>（経営哲学・マインドセット）</li>
+            <li><strong>最新技術</strong>（生成AI関連研修）</li>
+          </ul>
+        </div>
+        <div class="training-info-panel">
+          <div class="training-info-label">研修費用のご案内</div>
+          <p class="training-fee-copy">費用は、ご依頼内容や担当講師によって変動いたします。詳細はお気軽にお問い合わせください。</p>
+          <p class="training-fee-copy"><span class="sub-emphasis">基本料金の目安：100,000円（税抜）／60分</span><br>（※代表の栗原が登壇し、既存の研修コンテンツを使用した場合）</p>
+          <p class="training-fee-copy"><span class="sub-emphasis">オーダーメイド研修：</span> 確かな教育実績に基づくノウハウで、貴社独自の課題に合わせたプログラムをゼロから企画・開発することも可能です（※別途コンテンツ制作費を申し受けます）。</p>
         </div>
       </div>
     </div>
@@ -1250,13 +2260,13 @@
         <div class="eyebrow"><span class="edge-tick"></span>CONTACT</div>
         <h2>まずは、お話を聞かせてください。</h2>
         <p class="section-lead">
-          「まだ何も決まっていない」という段階のご相談こそ、私たちの得意分野です。メンタリング・コンサルティングのご相談、講演・研修のご依頼、社外取締役等への就任依頼まで、どの段階のご相談でも歓迎します。
+          「課題をうまく言葉にできない」「何から着手すべきか分からない」という段階でも構いません。メンタリング、経営コンサルティング、AI研修・活用支援、講演、社外取締役等への就任について、まずは状況をお聞かせください。（営業目的のご連絡はお控えください。お返事は致しておりません）
         </p>
       </div>
 
       <div class="contact-wrap fade-up">
         <div class="contact-info">
-          <h3>合同会社 ProfeSsions Edge</h3>
+          <h3>合同会社ProfeSsions Edge</h3>
           <p>
             料金は業務内容に応じて個別にご提案いたします。まずはお気軽にお問い合わせください。
           </p>
@@ -1302,43 +2312,214 @@
 
 </main>
 
-<footer>
+<footer class="footer-bottom-only">
   <div class="wrap">
-    <div class="foot-grid">
-      <div class="foot-brand">
-        <a href="#top" class="logo">
-          <span class="mark"></span>
-          <span>ProfeSsions Edge<span class="sub">合同会社プロフェッションズエッジ</span></span>
-        </a>
-        <p>教養と科学的経営学を基盤に、経営者の思考そのものを支援する。教育・研修事業、コンサルティング事業、AI事業（チテキウム）の三領域を展開するPSEグループの一翼。</p>
-      </div>
-      <div class="foot-links">
-        <div class="foot-col">
-          <h5>事業内容</h5>
-          <a href="#mentoring">教育・研修 / メンタリング</a>
-          <a href="#consulting">コンサルティング</a>
-          <a href="#chitekium">AI事業 チテキウム</a>
-        </div>
-        <div class="foot-col">
-          <h5>会社情報</h5>
-          <a href="#philosophy">理念・考え方</a>
-          <a href="#members">代表・体制</a>
-        </div>
-        <div class="foot-col">
-          <h5>関連サイト</h5>
-          <a href="https://masakikurihara.com" target="_blank" rel="noopener">栗原正樹 個人ページ <i style="font-size:11px;">↗</i></a>
-          <a href="https://www.chitekium.com" target="_blank" rel="noopener">チテキウム（AI事業） <i style="font-size:11px;">↗</i></a>
-        </div>
-      </div>
-    </div>
     <div class="foot-bottom">
       <div>© 2026 ProfeSsions Edge LLC. All rights reserved.</div>
-      <div>〒330-0053 埼玉県さいたま市浦和区前地3-14-12 1階A — Be a Edge.</div>
+      <div>〒330-0053 埼玉県さいたま市浦和区前地3-14-12 1階A — Be an Edge.</div>
     </div>
   </div>
 </footer>
 
 <script>
+  const curriculumGroups = document.querySelectorAll('.curriculum-group');
+  curriculumGroups.forEach((group) => {
+    group.addEventListener('toggle', () => {
+      if (!group.open) return;
+      curriculumGroups.forEach((otherGroup) => {
+        if (otherGroup !== group) otherGroup.open = false;
+      });
+    });
+  });
+
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  window.scrollTo(0, 0);
+
+  const liberalArtTrigger = document.getElementById('liberalArtTrigger');
+  const liberalArtPopup = document.getElementById('liberalArtPopup');
+  const liberalArtClose = document.getElementById('liberalArtClose');
+  let liberalArtPreviewTimer;
+  let liberalArtAutoHideTimer;
+  let liberalArtAutoTransitionTimer;
+  let liberalArtHoverCloseTimer;
+  const setLiberalArtOpen = (isOpen, restoreFocus = false) => {
+    if (!liberalArtTrigger || !liberalArtPopup) return;
+    liberalArtPopup.classList.toggle('is-open', isOpen);
+    liberalArtPopup.setAttribute('aria-hidden', String(!isOpen));
+    liberalArtTrigger.setAttribute('aria-expanded', String(isOpen));
+    if (restoreFocus) liberalArtTrigger.focus();
+  };
+  const cancelLiberalArtAutoPreview = () => {
+    window.clearTimeout(liberalArtPreviewTimer);
+    window.clearTimeout(liberalArtAutoHideTimer);
+    window.clearTimeout(liberalArtAutoTransitionTimer);
+    liberalArtPopup?.classList.remove('is-auto-preview');
+  };
+  const scheduleLiberalArtAutoPreview = () => {
+    cancelLiberalArtAutoPreview();
+    liberalArtPreviewTimer = window.setTimeout(() => {
+      liberalArtPopup?.classList.add('is-auto-preview');
+      setLiberalArtOpen(true);
+      liberalArtAutoHideTimer = window.setTimeout(() => {
+        setLiberalArtOpen(false);
+        liberalArtAutoTransitionTimer = window.setTimeout(() => {
+          liberalArtPopup?.classList.remove('is-auto-preview');
+        }, 1450);
+      }, 4600);
+    }, 1200);
+  };
+  const cancelLiberalArtHoverClose = () => window.clearTimeout(liberalArtHoverCloseTimer);
+  const scheduleLiberalArtHoverClose = () => {
+    cancelLiberalArtHoverClose();
+    liberalArtHoverCloseTimer = window.setTimeout(() => setLiberalArtOpen(false), 220);
+  };
+
+  const introScreen = document.getElementById('introScreen');
+  let introFinished = false;
+  const finishIntro = () => {
+    if (introFinished) return;
+    introFinished = true;
+    document.body.classList.remove('intro-active');
+    if (introScreen) introScreen.remove();
+    scheduleLiberalArtAutoPreview();
+  };
+  const shouldPlayIntro = document.body.classList.contains('page-home');
+  if (!shouldPlayIntro || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    finishIntro();
+  } else {
+    introScreen?.addEventListener('click', finishIntro);
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') finishIntro();
+    });
+    window.setTimeout(finishIntro, 7260);
+  }
+
+  liberalArtTrigger?.addEventListener('click', () => {
+    cancelLiberalArtAutoPreview();
+    setLiberalArtOpen(!liberalArtPopup?.classList.contains('is-open'));
+  });
+  liberalArtClose?.addEventListener('click', () => {
+    cancelLiberalArtAutoPreview();
+    setLiberalArtOpen(false, true);
+  });
+  if (window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
+    liberalArtTrigger?.addEventListener('mouseenter', () => {
+      cancelLiberalArtAutoPreview();
+      cancelLiberalArtHoverClose();
+      setLiberalArtOpen(true);
+    });
+    liberalArtTrigger?.addEventListener('mouseleave', scheduleLiberalArtHoverClose);
+    liberalArtPopup?.addEventListener('mouseenter', cancelLiberalArtHoverClose);
+    liberalArtPopup?.addEventListener('mouseleave', scheduleLiberalArtHoverClose);
+  }
+  document.addEventListener('click', (event) => {
+    if (!liberalArtPopup?.classList.contains('is-open')) return;
+    if (liberalArtPopup.contains(event.target) || liberalArtTrigger?.contains(event.target)) return;
+    cancelLiberalArtAutoPreview();
+    setLiberalArtOpen(false);
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && liberalArtPopup?.classList.contains('is-open')) {
+      cancelLiberalArtAutoPreview();
+      setLiberalArtOpen(false, true);
+    }
+  });
+
+  const setupMethodPopup = (triggerId, popupId) => {
+    const trigger = document.getElementById(triggerId);
+    const popup = document.getElementById(popupId);
+    const closeButton = popup?.querySelector('.method-dialog-close');
+    let closeTimer;
+    const cancelClose = () => window.clearTimeout(closeTimer);
+    const setOpen = (isOpen, restoreFocus = false) => {
+      if (!trigger || !popup) return;
+      popup.classList.toggle('is-open', isOpen);
+      popup.setAttribute('aria-hidden', String(!isOpen));
+      trigger.setAttribute('aria-expanded', String(isOpen));
+      if (restoreFocus) trigger.focus();
+    };
+    const open = () => { cancelClose(); setOpen(true); };
+    const scheduleClose = () => {
+      cancelClose();
+      closeTimer = window.setTimeout(() => setOpen(false), 450);
+    };
+    trigger?.addEventListener('click', () => setOpen(!popup?.classList.contains('is-open')));
+    closeButton?.addEventListener('click', () => setOpen(false, true));
+    if (window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
+      trigger?.addEventListener('mouseenter', open);
+      trigger?.addEventListener('mouseleave', scheduleClose);
+      popup?.addEventListener('mouseenter', cancelClose);
+      popup?.addEventListener('mouseleave', scheduleClose);
+    }
+    document.addEventListener('click', (event) => {
+      if (!popup?.classList.contains('is-open')) return;
+      if (popup.contains(event.target) || trigger?.contains(event.target)) return;
+      setOpen(false);
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && popup?.classList.contains('is-open')) setOpen(false, true);
+    });
+  };
+  setupMethodPopup('consultingMethodTrigger', 'consultingMethodDialog');
+  setupMethodPopup('consultingNoticeTrigger', 'consultingNoticeDialog');
+
+  const pageScrollStatus = document.getElementById('pageScrollStatus');
+  const backToTop = document.getElementById('backToTop');
+  let scrollUiTicking = false;
+  const updateScrollUi = () => {
+    const scrollRange = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    const progress = Math.min(1, Math.max(0, window.scrollY / scrollRange));
+    pageScrollStatus?.style.setProperty('--scroll-progress', String(progress));
+    const footer = document.querySelector('footer');
+    const footerIsVisible = footer && footer.getBoundingClientRect().top < window.innerHeight;
+    pageScrollStatus?.classList.toggle('is-hidden', Boolean(footerIsVisible));
+    backToTop?.classList.toggle('is-visible', window.scrollY > Math.max(500, window.innerHeight * .65));
+    scrollUiTicking = false;
+  };
+  const requestScrollUiUpdate = () => {
+    if (scrollUiTicking) return;
+    scrollUiTicking = true;
+    window.requestAnimationFrame(updateScrollUi);
+  };
+  window.addEventListener('scroll', requestScrollUiUpdate, { passive:true });
+  window.addEventListener('resize', requestScrollUiUpdate);
+  pageScrollStatus?.addEventListener('click', () => {
+    const sections = Array.from(document.querySelectorAll('main > section')).filter((section) => {
+      const style = window.getComputedStyle(section);
+      return style.display !== 'none' && style.visibility !== 'hidden' && section.getBoundingClientRect().height > 0;
+    });
+    if (!sections.length) return;
+
+    const headerHeight = document.querySelector('header')?.offsetHeight || 0;
+    let currentIndex = 0;
+    let largestOverlap = -1;
+    sections.forEach((section, index) => {
+      const rect = section.getBoundingClientRect();
+      const visibleTop = Math.max(rect.top, headerHeight);
+      const visibleBottom = Math.min(rect.bottom, window.innerHeight);
+      const overlap = Math.max(0, visibleBottom - visibleTop);
+      if (overlap > largestOverlap) {
+        largestOverlap = overlap;
+        currentIndex = index;
+      }
+    });
+    if (largestOverlap <= 0) {
+      sections.forEach((section, index) => {
+        if (section.getBoundingClientRect().top <= headerHeight + 1) currentIndex = index;
+      });
+    }
+
+    const nextTarget = sections[currentIndex + 1] || document.querySelector('footer');
+    if (!nextTarget) return;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    nextTarget.scrollIntoView({ behavior:reducedMotion ? 'auto' : 'smooth', block:'start' });
+  });
+  backToTop?.addEventListener('click', () => {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top:0, behavior:reducedMotion ? 'auto' : 'smooth' });
+  });
+  updateScrollUi();
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
